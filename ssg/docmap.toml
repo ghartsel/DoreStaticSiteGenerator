@@ -1,0 +1,138 @@
+[meta]
+title = "SVP Dashboard User Guide"
+subtitle = "How to Use the SVP Dashboard"
+abstract = "The SunSpec System Validation Platform (SVP) Dashboard enables visibility and control of SunSpec-enabled devices. The web browser-based interface leverages standardized device information model protocols and data structures to facilitate device development, certification, and support activities."
+keywords = ["wordA", "wordB", "wordC"]
+status = "Draft"
+docversion = "1.0"
+id = "000001"
+author = ""
+org = "My Company, Inc."
+prodName = ""
+prodVersion = ""
+
+[params]
+validate = "false"
+continue = "true"
+
+[authors]
+markup = "rst2html"
+stylesheet = "theme.css"
+
+[reviews]
+location = "/share"
+
+    [[reviews.reviewers]]
+    name = "John Smeth"
+    email = "jsmeth@company.com"
+
+    [[reviews.reviewers]]
+    name = "John Smeth"
+    email = "jsmeth@company.com"
+
+[publishes]
+
+[options]
+header = "false"
+footer = "false"
+search = "false"
+
+[badges]
+
+    [[badges.properties]]
+    text = "Community"
+    url = "https://www.gh.works"
+
+    [[badges.properties]]
+    text = "GitHub"
+    url = "https://github.com/ghartsel"
+
+    [[badges.properties]]
+    text = "Contact"
+    url = "gene@gh.works"
+
+    [[badges.properties]]
+    text = "About"
+    url = "https://www.gh.works/"
+
+[domains]
+
+    [[domains.classes]]
+    name = "Getting Started"
+    description = "Read these documents to get started with the product."
+    icon = "getstarted.png"
+
+        [[domains.classes.topics]]
+        filename = "svp_ataGlance"
+        author = "Joe Auth2"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "svp_gettingStarted"
+        author = "Joe Auth3"
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "GUI User Guide"
+    description = "Introduction to GUI basics."
+    icon = "how.png"
+
+        [[domains.classes.topics]]
+        filename = "svp_dashUI"
+        author = "Joe Auth4"
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Tutorials"
+    description = "Learn the product functions."
+    icon = "tutorial.png"
+
+        [[domains.classes.topics]]
+        filename = "svp_t_readwrite"
+        author = "Joe Auth5"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "svp_t_exportImage"
+        author = "Joe Auth5"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "svp_t_manageIM"
+        author = "Joe Auth2"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "svp_t_genWorkbook"
+        author = "Joe Auth3"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "svp_t_createPICS"
+        author = "Joe Auth4"
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Resources"
+    description = "Get additional support and read the reference material."
+    icon = "support.png"
+
+        [[domains.classes.topics]]
+        filename = "svp_support"
+        author = "Joe Auth5"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "svp_acronyms"
+        author = "Joe Auth5"
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Release Notes"
+    description = "Learn what's new."
+    icon = "usecase.png"
+
+        [[domains.classes.topics]]
+        filename = "svp_release"
+        author = "Joe Auth5"
+        status = "Complete"

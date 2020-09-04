@@ -1,0 +1,70 @@
+[meta]
+title = "reStructuredText Cheat Sheet"
+subtitle = "Guide to reST Markup and Directives"
+abstract = "This demonstrates the reStructuredText features supported by this static site generator."
+keywords = ["reStructuredText", "markup", "directives"]
+status = "Draft"
+docVersion = "0.9"
+id = "000000"
+author = "Gene Hartsell"
+org = "GHWorks, LLC"
+prodName = "reStructuredText Authoring Cheat Sheet"
+prodVersion = ""
+
+[params]
+validate = "false"
+continue = "true"
+
+[authors]
+markup = "rst2html"
+stylesheet = "theme.css"
+
+[reviews]
+location = ""
+
+    [[reviews.reviewers]]
+    name = ""
+    email = ""
+
+[publishes]
+
+[options]
+header = "false"
+footer = "false"
+search = "false"
+
+[badges]
+
+    [[badges.properties]]
+    text = "Community"
+    url = "https://www.gh.works"
+
+    [[badges.properties]]
+    text = "GitHub"
+    url = "https://github.com/ghartsel"
+
+    [[badges.properties]]
+    text = "Contact"
+    url = "gene@gh.works"
+
+    [[badges.properties]]
+    text = "About"
+    url = "https://www.gh.works/"
+
+[domains]
+
+    [[domains.classes]]
+    name = "reStructuredText (ReST) Cheat Sheet"
+    description = "ReST quick reference."
+    icon = "document.png"
+
+        [[domains.classes.topics]]
+        filename = "reSTMarkup"
+        author = "G. Hartsell"
+        status = "Draft"
+
+        [[domains.classes.topics]]
+        filename = "reSTDirectives"
+        author = "G. Hartsell"
+        status = "Draft"
+
