@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" >
+<!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:description" content="Document Title" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:type" content="" />
+<meta property="og:title" content="Document Title" />
+<meta property="og:type" content="website" />
+<meta property="og:updated_time" content="" />
+<meta property="og:url" content="" />
+<title>Documentation</title>
+<link rel="shortcut icon" href="static/img/favicon.ico"/>
+<link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+<link rel="stylesheet" href="static/css/jquery-ui.min.css" type="text/css" />
+<script src="static/js/modernizr.min.js"></script>
+</head>
+<body class="wy-body-for-nav">
+
+<div class="wy-grid-for-nav">
+<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<ul class="sidebartop">
+<li class="nolink search"><div role="search">
+<form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+<input type="text" name="q" placeholder="Search this document" aria-label="Search this project" id="searchinput" />
+<input type="hidden" name="check_keywords" value="yes" />
+<input type="hidden" name="area" value="default" />
+</form>
+</div>
+</li></ul>
+</div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+<ul class="current">
+<li class="nav-caption"><span class="caption-text">reStructuredText (ReST) Cheat Sheet</span></li><li class="toctree-l1"><a class="reference internal" href="reSTMarkup.html">reStructuredText Markup</a>
+<ul><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#paragraphs">Paragraphs</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#bullet-lists">Bullet Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#enumerated-lists">Enumerated Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#definition-lists">Definition Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#field-lists">Field Lists</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#bibliographic-fields">Bibliographic Fields</a>
+<ul><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#abstract">Abstract</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#address">Address</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#author">Author</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#authors">Authors</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#contact">Contact</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#copyright">Copyright</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#date">Date</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#organization">Organization</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#version---revision">Version - Revision</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#status">Status</a>
+</li></ul></li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#rcs-keywords">RCS Keywords</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#option-lists">Option Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#literal-blocks">Literal Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#indented-literal-blocks">Indented Literal Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#line-blocks">Line Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#block-quotes">Block Quotes</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#doctest-blocks">Doctest Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#grid-tables">Grid Tables</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#simple-tables">Simple Tables</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#footnotes">Footnotes</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#citations">Citations</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#hyperlink-targets">Hyperlink Targets</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#explicit-internal-targets">Explicit Internal Targets</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#implicit-internal-targets-(headings)">Implicit Internal Targets (Headings)</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#other-document-topic-targets">Other Document Topic Targets</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#external-targets">External Targets</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#comments">Comments</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#inline-markup">Inline Markup</a>
+</li></ul></li><li class="toctree-l1"><a class="reference internal" href="reSTDirectives.html">reStructuredText Directives</a>
+<ul><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#admonitions">Admonitions</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#specific-admonitions">Specific Admonitions</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#generic-admonition">Generic Admonition</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#images">Images</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#image">Image</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#figure">Figure</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#body-elements">Body Elements</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#topic">Topic</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#sidebar">Sidebar</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#line-block">Line Block</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#parsed-literal-block">Parsed Literal Block</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#code">Code</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#math">Math</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#rubric">Rubric</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#epigraph">Epigraph</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#highlights">Highlights</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#pull-quote">Pull-Quote</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#compound-paragraph">Compound Paragraph</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#container">Container</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#tables">Tables</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#table">Table</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#csv-table">CSV Table</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#list-table">List Table</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#document-parts">Document Parts</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#table-of-contents">Table of Contents</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#automatic-section-numbering">Automatic Section Numbering</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#document-header-&-footer">Document Header & Footer</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#html-specific">HTML-Specific</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#meta">Meta</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#directives-for-substitution-definitions">Directives for Substitution Definitions</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#replacement-text">Replacement Text</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#unicode-character-codes">Unicode Character Codes</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#date">Date</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#miscellaneous">Miscellaneous</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#including-an-external-document-fragment">Including an External Document Fragment</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#raw-data-pass-through">Raw Data Pass-Through</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#class">Class</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#custom-interpreted-text-roles">Custom Interpreted Text Roles</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#setting-the-default-interpreted-text-role">Setting the Default Interpreted Text Role</a>
+</li></ul></li></ul></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+<div class="wy-nav-content">
+<div class="rst-content">
+<a href="index.html">Home</a>
+<a href="reSTDirectives.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">Next</a><span class="bar  float-right">|</span>
+<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<div itemprop="articleBody" class="toBeIndexed">
+<div class="document">
+<div class="section" id="restructuredtext-markup">
+<h1>reStructuredText Markup</h1>
+<p>See: <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#paragraphs" id="id12">Paragraphs</a></li>
+<li><a class="reference internal" href="#bullet-lists" id="id13">Bullet Lists</a></li>
+<li><a class="reference internal" href="#enumerated-lists" id="id14">Enumerated Lists</a></li>
+<li><a class="reference internal" href="#definition-lists" id="id15">Definition Lists</a></li>
+<li><a class="reference internal" href="#field-lists" id="id16">Field Lists</a><ul>
+<li><a class="reference internal" href="#bibliographic-fields" id="id17">Bibliographic Fields</a><ul>
+<li><a class="reference internal" href="#abstract" id="id18">Abstract</a></li>
+<li><a class="reference internal" href="#address" id="id19">Address</a></li>
+<li><a class="reference internal" href="#author" id="id20">Author</a></li>
+<li><a class="reference internal" href="#authors" id="id21">Authors</a></li>
+<li><a class="reference internal" href="#contact" id="id22">Contact</a></li>
+<li><a class="reference internal" href="#copyright" id="id23">Copyright</a></li>
+<li><a class="reference internal" href="#date" id="id24">Date</a></li>
+<li><a class="reference internal" href="#organization" id="id25">Organization</a></li>
+<li><a class="reference internal" href="#version-revision" id="id26">Version - Revision</a></li>
+<li><a class="reference internal" href="#status" id="id27">Status</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rcs-keywords" id="id28">RCS Keywords</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#option-lists" id="id29">Option Lists</a></li>
+<li><a class="reference internal" href="#literal-blocks" id="id30">Literal Blocks</a></li>
+<li><a class="reference internal" href="#indented-literal-blocks" id="id31">Indented Literal Blocks</a></li>
+<li><a class="reference internal" href="#line-blocks" id="id32">Line Blocks</a></li>
+<li><a class="reference internal" href="#block-quotes" id="id33">Block Quotes</a></li>
+<li><a class="reference internal" href="#doctest-blocks" id="id34">Doctest Blocks</a></li>
+<li><a class="reference internal" href="#grid-tables" id="id35">Grid Tables</a></li>
+<li><a class="reference internal" href="#simple-tables" id="id36">Simple Tables</a></li>
+<li><a class="reference internal" href="#footnotes" id="id37">Footnotes</a></li>
+<li><a class="reference internal" href="#citations" id="id38">Citations</a></li>
+<li><a class="reference internal" href="#hyperlink-targets" id="id39">Hyperlink Targets</a><ul>
+<li><a class="reference internal" href="#explicit-internal-targets" id="id40">Explicit Internal Targets</a></li>
+<li><a class="reference internal" href="#implicit-internal-targets-headings" id="id41">Implicit Internal Targets (Headings)</a></li>
+<li><a class="reference internal" href="#other-document-topic-targets" id="id42">Other Document Topic Targets</a></li>
+<li><a class="reference internal" href="#external-targets" id="id43">External Targets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comments" id="id44">Comments</a></li>
+<li><a class="reference internal" href="#inline-markup" id="id45">Inline Markup</a></li>
+</ul>
+</div>
+<div class="section" id="paragraphs">
+<h2>Paragraphs</h2>
+<p>Paragraphs consist of blocks of left-aligned text with no markup indicating any other body element. Blank lines separate paragraphs from each other and from other body elements. Paragraphs may contain inline markup.</p>
+</div>
+<div class="section" id="bullet-lists">
+<h2>Bullet Lists</h2>
+<ul>
+<li><p class="first">This is the first bullet list item.  The blank line above the
+first list item is required; blank lines between list items
+(such as below this paragraph) are optional.</p>
+</li>
+<li><p class="first">This is the first paragraph in the second item in the list.</p>
+<p>This is the second paragraph in the second item in the list.
+The blank line above this paragraph is required.  The left edge
+of this paragraph lines up with the paragraph above, both
+indented relative to the bullet.</p>
+<ul class="simple">
+<li>This is a sublist.  The bullet lines up with the left edge of
+the text blocks above.  A sublist is a new list so requires a
+blank line above and below.</li>
+</ul>
+</li>
+<li><p class="first">This is the third item of the main list.</p>
+</li>
+</ul>
+<p>This paragraph is not part of the list.</p>
+</div>
+<div class="section" id="enumerated-lists">
+<h2>Enumerated Lists</h2>
+<ol class="arabic simple">
+<li>Item 1 initial text.<ol class="loweralpha">
+<li>Item 1a.</li>
+<li>Item 1b.</li>
+</ol>
+</li>
+<li><ol class="first loweralpha">
+<li>Item 2a.</li>
+<li>Item 2b.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="definition-lists">
+<h2>Definition Lists</h2>
+<dl class="docutils">
+<dt>term 1</dt>
+<dd>Definition 1.</dd>
+<dt>term 2</dt>
+<dd><p class="first">Definition 2, paragraph 1.</p>
+<p class="last">Definition 2, paragraph 2.</p>
+</dd>
+<dt>term 3 <span class="classifier-delimiter">:</span> <span class="classifier">classifier</span></dt>
+<dd>Definition 3.</dd>
+<dt>term 4 <span class="classifier-delimiter">:</span> <span class="classifier">classifier one</span> <span class="classifier-delimiter">:</span> <span class="classifier">classifier two</span></dt>
+<dd>Definition 4.</dd>
+</dl>
+</div>
+<div class="section" id="field-lists">
+<h2>Field Lists</h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Date:</th><td class="field-body"><p class="first">2001-08-16</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Version:</th><td class="field-body"><p class="first">1</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Authors:</th><td class="field-body"><ul class="first simple">
+<li>Me</li>
+<li>Myself</li>
+<li>I</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Indentation:</th><td class="field-body"><p class="first">Since the field marker may be quite long, the second
+and subsequent lines of the field body do not have to line up
+with the first line, but they must be indented relative to the
+field name marker, and they must line up with each other.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Parameter i:</th><td class="field-body"><p class="first last">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="bibliographic-fields">
+<h3>Bibliographic Fields</h3>
+<div class="section" id="abstract">
+<h4>Abstract</h4>
+<div class="topic">
+<p class="topic-title">Title</p>
+<p>Body.</p>
+</div>
+</div>
+<div class="section" id="address">
+<h4>Address</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Address:</th><td class="field-body">123 Example Ave.
+Example, EX</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="author">
+<h4>Author</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body"><ol class="first last upperalpha simple" start="10">
+<li>Random Hacker</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="authors">
+<h4>Authors</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Authors:</th><td class="field-body"><ol class="first last upperalpha simple" start="10">
+<li>Random Hacker; Jane Doe</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="contact">
+<h4>Contact</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Contact:</th><td class="field-body"><a class="reference external" href="mailto:jrh&#64;example.com">jrh&#64;example.com</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h4>Copyright</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Copyright:</th><td class="field-body">This document has been placed in the public domain.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="date">
+<h4>Date</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">2002-08-20</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="organization">
+<h4>Organization</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Organization:</th><td class="field-body">Humankind</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="version-revision">
+<h4>Version - Revision</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Version:</th><td class="field-body">1</td>
+</tr>
+<tr class="field"><th class="field-name">Revision:</th><td class="field-body">b</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="status">
+<h4>Status</h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Work In Progress</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rcs-keywords">
+<h3>RCS Keywords</h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">$keyword: expansion text $</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Work In Progress</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="option-lists">
+<h2>Option Lists</h2>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>Output all.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span></kbd></td>
+<td>Output both (this description is
+quite long).</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c <var>arg</var></span></kbd></td>
+<td>Output just arg.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--long</span></kbd></td>
+<td>Output all day long.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td><p class="first">This option has two paragraphs in the description.
+This is the first.</p>
+<p class="last">This is the second.  Blank lines may be omitted between
+options (as above) or left in (as here and below).</p>
+</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--very-long-option</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>A VMS-style option.  Note the adjustment for
+the required two spaces.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--an-even-longer-option</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>The description can also start on the next line.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-2</span>, <span class="option">--two</span></kbd></td>
+<td>This option has two variants.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-f <var>FILE</var></span>, <span class="option">--file=<var>FILE</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>These two options are synonyms; both have
+arguments.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">/V</span></kbd></td>
+<td>A VMS/DOS-style option.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="literal-blocks">
+<h2>Literal Blocks</h2>
+<p>This is a typical paragraph.  An indented literal block follows.</p>
+<pre class="literal-block">
+for a in [5,4,3,2,1]:   # this is program code, shown as-is
+    print a
+print &quot;it's...&quot;
+# a literal block continues until the indentation ends
+</pre>
+<p>This text has returned to the indentation of the first paragraph,
+is outside of the literal block, and is therefore treated as an
+ordinary paragraph.</p>
+</div>
+<div class="section" id="indented-literal-blocks">
+<h2>Indented Literal Blocks</h2>
+<p>This is a typical paragraph.  An indented literal block follows:</p>
+<pre class="literal-block">
+for a in [5,4,3,2,1]:   # this is program code, shown as-is
+    print a
+print &quot;it's...&quot;
+# a literal block continues until the indentation ends
+</pre>
+<p>This text has returned to the indentation of the first paragraph,
+is outside of the literal block, and is therefore treated as an
+ordinary paragraph.</p>
+</div>
+<div class="section" id="line-blocks">
+<h2>Line Blocks</h2>
+<div class="line-block">
+<div class="line">Lend us a couple of bob till Thursday.</div>
+<div class="line">I'm absolutely skint.</div>
+<div class="line">But I'm expecting a postal order and I can pay you back
+as soon as it comes.</div>
+<div class="line">Love, Ewan.</div>
+</div>
+<hr class="docutils" />
+<p>Take it away, Eric the Orchestra Leader!</p>
+<blockquote>
+<div class="line-block">
+<div class="line">A one, two, a one two three four</div>
+<div class="line"><br /></div>
+<div class="line">Half a bee, philosophically,</div>
+<div class="line-block">
+<div class="line">must, <em>ipso facto</em>, half not be.</div>
+</div>
+<div class="line">But half the bee has got to be,</div>
+<div class="line-block">
+<div class="line"><em>vis a vis</em> its entity.  D'you see?</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">But can a bee be said to be</div>
+<div class="line-block">
+<div class="line">or not to be an entire bee,</div>
+<div class="line-block">
+<div class="line">when half the bee is not a bee,</div>
+<div class="line-block">
+<div class="line">due to some ancient injury?</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="line">Singing...</div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="block-quotes">
+<h2>Block Quotes</h2>
+<p>This is an ordinary paragraph, introducing a block quote.</p>
+<blockquote>
+<p>&quot;It is my business to know things.  That is my trade.&quot;</p>
+<p class="attribution">&mdash;Sherlock Holmes</p>
+</blockquote>
+</div>
+<div class="section" id="doctest-blocks">
+<h2>Doctest Blocks</h2>
+<p>This is an ordinary paragraph.</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; print 'this is a Doctest block'
+this is a Doctest block
+</pre>
+<p>The following is a literal block:</p>
+<pre class="literal-block">
+&gt;&gt;&gt; This is not recognized as a doctest block by
+reStructuredText.  It *will* be recognized by the doctest
+module, though!
+</pre>
+</div>
+<div class="section" id="grid-tables">
+<h2>Grid Tables</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="21%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Header row, column 1
+(header rows optional)</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 4</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>body row 1, column 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>column 4</td>
+</tr>
+<tr><td>body row 2</td>
+<td colspan="3">Cells may span columns.</td>
+</tr>
+<tr><td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td colspan="2" rowspan="2"><ul class="first last simple">
+<li>Table cells</li>
+<li>contain</li>
+<li>body elements.</li>
+</ul>
+</td>
+</tr>
+<tr><td>body row 4</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="22%" />
+<col width="24%" />
+<col width="24%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>row 1, col 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>column 4</td>
+</tr>
+<tr><td>row 2</td>
+<td colspan="3">Use the command <tt class="docutils literal">ls | more</tt>.</td>
+</tr>
+<tr><td>row 3</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="simple-tables">
+<h2>Simple Tables</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A and B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr><td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr><td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">col 1</th>
+<th class="head">col 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Second column of row 1.</td>
+</tr>
+<tr><td>2</td>
+<td>Second column of row 2.
+Second line of paragraph.</td>
+</tr>
+<tr><td>3</td>
+<td><ul class="first last simple">
+<li>Second column of row 3.</li>
+<li>Second item in bullet
+list (row 3, column 2).</li>
+</ul>
+</td>
+</tr>
+<tr><td></td>
+<td>Row 4; column 1 will be empty.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="footnotes">
+<h2>Footnotes</h2>
+<table class="docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>Body elements go here.</td></tr>
+</tbody>
+</table>
+<p>If <a class="footnote-reference" href="#note" id="id2">[3]</a> is the first footnote reference, it will show up as
+&quot;[1]&quot;.  We can refer to it again as <a class="footnote-reference" href="#note" id="id3">[3]</a> and again see
+&quot;[1]&quot;.  We can also refer to it as <a class="reference internal" href="#note">note</a> (an ordinary internal
+hyperlink reference).</p>
+<table class="docutils footnote" frame="void" id="note" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> This is the footnote labeled &quot;note&quot;.</td></tr>
+</tbody>
+</table>
+<p>Here is a symbolic footnote reference: <a class="footnote-reference" href="#id5" id="id4">[*]</a>.</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[*]</a></td><td>This is the footnote.</td></tr>
+</tbody>
+</table>
+<p><a class="footnote-reference" href="#id9" id="id6">[2]</a> will be &quot;2&quot; (manually numbered),
+<a class="footnote-reference" href="#id10" id="id7">[5]</a> will be &quot;3&quot; (anonymous auto-numbered), and
+<a class="footnote-reference" href="#label" id="id8">[4]</a> will be &quot;1&quot; (labeled auto-numbered).</p>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td>This footnote is labeled manually, so its number is fixed.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="label" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[4]</a></td><td>This autonumber-labeled footnote will be labeled &quot;1&quot;.
+It is the first auto-numbered footnote and no other footnote
+with label &quot;1&quot; exists.  The order of the footnotes is used to
+determine numbering, not the order of the footnote references.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[5]</a></td><td>This footnote will be labeled &quot;3&quot;.  It is the second
+auto-numbered footnote, but footnote label &quot;2&quot; is already used.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="citations">
+<h2>Citations</h2>
+<p>Here is a citation reference: <a class="citation-reference" href="#cit2002" id="id11">[CIT2002]</a>.</p>
+<table class="docutils citation" frame="void" id="cit2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[CIT2002]</a></td><td>This is the citation.  It's just like a footnote,
+except the label is textual.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hyperlink-targets">
+<h2>Hyperlink Targets</h2>
+<div class="section" id="explicit-internal-targets">
+<h3>Explicit Internal Targets</h3>
+<p>Clicking on this internal hyperlink will take us to the <a class="reference internal" href="#target">target</a> below.</p>
+<p>Clicking on this internal hyperlink will take us to the <a class="reference internal" href="#target1">target1</a> below.</p>
+<p>Clicking on this internal hyperlink will take us to the <a class="reference internal" href="#target2">target2</a> below.</p>
+<p id="target">The hyperlink target above points to this paragraph.</p>
+<p id="target2"><span id="target1"></span>The targets &quot;target1&quot; and &quot;target2&quot; are synonyms; they both point to this paragraph.</p>
+</div>
+<div class="section" id="implicit-internal-targets-headings">
+<h3>Implicit Internal Targets (Headings)</h3>
+<p>Jump to the <a class="reference internal" href="#bullet-lists">Bullet Lists</a> heading.</p>
+</div>
+<div class="section" id="other-document-topic-targets">
+<h3>Other Document Topic Targets</h3>
+<p>Go to the other part of this document, the <a class="reference external" href="reSTDirectives.html">reStructuredText Directives</a> chapter.</p>
+</div>
+<div class="section" id="external-targets">
+<h3>External Targets</h3>
+<p>See the <a class="reference external" href="http://www.python.org">Python</a> home page for info.</p>
+<p><a class="reference external" href="mailto:jdoe&#64;example.com">Write to me</a> with your questions.</p>
+<p>See the <a class="reference external" href="http://www.python.org">Python home page</a> for info.</p>
+<p>This <a class="reference external" href="http://www.python.org">link</a> is an alias to the link above.</p>
+<p>This is exactly equivalent to:</p>
+<p>See the <a class="reference external" href="http://www.python.org">Python home page</a> for info.</p>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments</h2>
+<!-- This is a comment -->
+<!-- _so: is this! -->
+<!-- [and] this! -->
+<!-- this:: too! -->
+<!-- |even| this:: ! -->
+</div>
+<div class="section" id="inline-markup">
+<h2>Inline Markup</h2>
+<p><em>emphasis</em></p>
+<p><strong>strong emphasis</strong></p>
+<p><tt class="docutils literal">interpreted text</tt> is the same as <tt class="docutils literal">interpreted text</tt>.</p>
+<p>This is <sup>superscript</sup> interpreted text.</p>
+<p><tt class="docutils literal">inline literals</tt></p>
+</div>
+</div>
+</div>
+
+</div><!-- /.toBeIndexed -->
+</div>
+<footer>
+<div class="rst-footer-nav" role="navigation" aria-label="footer navigation">
+
+<a href="reSTDirectives.html" title="Accesskey Alt(+Shift)+n" accesskey="n">Next</a>
+</div></footer>
+</div>
+</div>
+</section>
+</div>
+
+
+<script type="text/javascript">
+var DOCUMENTATION_OPTIONS = {
+URL_ROOT:'./',
+VERSION:'',
+COLLAPSE_INDEX:false,
+FILE_SUFFIX:'.html',
+HAS_SOURCE:  true
+};
+</script>
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/underscore.js"></script>
+<script type="text/javascript" src="static/js/doctools.js"></script>
+<script type="text/javascript" src="static/js/language_data.js"></script>
+<script type="text/javascript" src="static/js/searchtools.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/js/theme.js"></script>
+<script type="text/javascript">
+jQuery(function () {
+SphinxRtdTheme.StickyNav.enable();
+});
+</script>
+<script type="text/javascript" id="idPiwikScriptPlaceholder"></script>
+<header>
+<div class="header__container">
+<a href="index.html"><img class="raw_img" height="64" src="img/bannerLogo.png" alt="Documentation" /></a>
+
+<ul class="header__links"><li><a href="https://www.gh.works">Community</a></li><li><a href="https://github.com/ghartsel">GitHub</a></li><li><a href="gene@gh.works">Contact</a></li><li><a href="https://www.gh.works/">About</a></li></ul>
+</div>
+</header>
+</body>
+</html>

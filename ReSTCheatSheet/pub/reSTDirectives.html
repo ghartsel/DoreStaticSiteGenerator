@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" >
+<!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:description" content="Document Title" />
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:type" content="" />
+<meta property="og:title" content="Document Title" />
+<meta property="og:type" content="website" />
+<meta property="og:updated_time" content="" />
+<meta property="og:url" content="" />
+<title>Documentation</title>
+<link rel="shortcut icon" href="static/img/favicon.ico"/>
+<link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+<link rel="stylesheet" href="static/css/jquery-ui.min.css" type="text/css" />
+<script src="static/js/modernizr.min.js"></script>
+</head>
+<body class="wy-body-for-nav">
+
+<div class="wy-grid-for-nav">
+<nav data-toggle="wy-nav-shift" class="wy-nav-side">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<ul class="sidebartop">
+<li class="nolink search"><div role="search">
+<form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+<input type="text" name="q" placeholder="Search this document" aria-label="Search this project" id="searchinput" />
+<input type="hidden" name="check_keywords" value="yes" />
+<input type="hidden" name="area" value="default" />
+</form>
+</div>
+</li></ul>
+</div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+<ul class="current">
+<li class="nav-caption"><span class="caption-text">reStructuredText (ReST) Cheat Sheet</span></li><li class="toctree-l1"><a class="reference internal" href="reSTMarkup.html">reStructuredText Markup</a>
+<ul><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#paragraphs">Paragraphs</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#bullet-lists">Bullet Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#enumerated-lists">Enumerated Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#definition-lists">Definition Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#field-lists">Field Lists</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#bibliographic-fields">Bibliographic Fields</a>
+<ul><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#abstract">Abstract</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#address">Address</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#author">Author</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#authors">Authors</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#contact">Contact</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#copyright">Copyright</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#date">Date</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#organization">Organization</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#version---revision">Version - Revision</a>
+</li><li class="toctree-l4"><a class="reference internal" href="reSTMarkup.html#status">Status</a>
+</li></ul></li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#rcs-keywords">RCS Keywords</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#option-lists">Option Lists</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#literal-blocks">Literal Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#indented-literal-blocks">Indented Literal Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#line-blocks">Line Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#block-quotes">Block Quotes</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#doctest-blocks">Doctest Blocks</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#grid-tables">Grid Tables</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#simple-tables">Simple Tables</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#footnotes">Footnotes</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#citations">Citations</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#hyperlink-targets">Hyperlink Targets</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#explicit-internal-targets">Explicit Internal Targets</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#implicit-internal-targets-(headings)">Implicit Internal Targets (Headings)</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#other-document-topic-targets">Other Document Topic Targets</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTMarkup.html#external-targets">External Targets</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#comments">Comments</a>
+</li><li class="toctree-l2"><a class="reference internal" href="reSTMarkup.html#inline-markup">Inline Markup</a>
+</li></ul></li><li class="toctree-l1"><a class="reference internal" href="reSTDirectives.html">reStructuredText Directives</a>
+<ul><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#admonitions">Admonitions</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#specific-admonitions">Specific Admonitions</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#generic-admonition">Generic Admonition</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#images">Images</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#image">Image</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#figure">Figure</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#body-elements">Body Elements</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#topic">Topic</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#sidebar">Sidebar</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#line-block">Line Block</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#parsed-literal-block">Parsed Literal Block</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#code">Code</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#math">Math</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#rubric">Rubric</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#epigraph">Epigraph</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#highlights">Highlights</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#pull-quote">Pull-Quote</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#compound-paragraph">Compound Paragraph</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#container">Container</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#tables">Tables</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#table">Table</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#csv-table">CSV Table</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#list-table">List Table</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#document-parts">Document Parts</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#table-of-contents">Table of Contents</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#automatic-section-numbering">Automatic Section Numbering</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#document-header-&-footer">Document Header & Footer</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#html-specific">HTML-Specific</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#meta">Meta</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#directives-for-substitution-definitions">Directives for Substitution Definitions</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#replacement-text">Replacement Text</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#unicode-character-codes">Unicode Character Codes</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#date">Date</a>
+</li></ul></li><li class="toctree-l2"><a class="reference internal" href="reSTDirectives.html#miscellaneous">Miscellaneous</a>
+<ul><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#including-an-external-document-fragment">Including an External Document Fragment</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#raw-data-pass-through">Raw Data Pass-Through</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#class">Class</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#custom-interpreted-text-roles">Custom Interpreted Text Roles</a>
+</li><li class="toctree-l3"><a class="reference internal" href="reSTDirectives.html#setting-the-default-interpreted-text-role">Setting the Default Interpreted Text Role</a>
+</li></ul></li></ul></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+<div class="wy-nav-content">
+<div class="rst-content">
+<a href="index.html">Home</a>
+<a href="reSTMarkup.html" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+p">Previous</a>
+<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+<div itemprop="articleBody" class="toBeIndexed">
+<div class="header">
+This space for rent.
+<hr class="header"/>
+</div>
+<div class="document">
+<div class="section" id="restructuredtext-directives">
+<h1>reStructuredText Directives</h1>
+<p>See: <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html">reStructuredText Directives</a></p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#admonitions" id="id3">Admonitions</a><ul>
+<li><a class="reference internal" href="#specific-admonitions" id="id4">Specific Admonitions</a></li>
+<li><a class="reference internal" href="#generic-admonition" id="id5">Generic Admonition</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#images" id="id6">Images</a><ul>
+<li><a class="reference internal" href="#image" id="id7">Image</a></li>
+<li><a class="reference internal" href="#figure" id="id8">Figure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#body-elements" id="id9">Body Elements</a><ul>
+<li><a class="reference internal" href="#topic" id="id10">Topic</a></li>
+<li><a class="reference internal" href="#sidebar" id="id11">Sidebar</a></li>
+<li><a class="reference internal" href="#line-block" id="id12">Line Block</a></li>
+<li><a class="reference internal" href="#parsed-literal-block" id="id13">Parsed Literal Block</a></li>
+<li><a class="reference internal" href="#code" id="id14">Code</a></li>
+<li><a class="reference internal" href="#math" id="id15">Math</a></li>
+<li><a class="reference internal" href="#rubric" id="id16">Rubric</a></li>
+<li><a class="reference internal" href="#epigraph" id="id17">Epigraph</a></li>
+<li><a class="reference internal" href="#highlights" id="id18">Highlights</a></li>
+<li><a class="reference internal" href="#pull-quote" id="id19">Pull-Quote</a></li>
+<li><a class="reference internal" href="#compound-paragraph" id="id20">Compound Paragraph</a></li>
+<li><a class="reference internal" href="#container" id="id21">Container</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tables" id="id22">Tables</a><ul>
+<li><a class="reference internal" href="#table" id="id23">Table</a></li>
+<li><a class="reference internal" href="#csv-table" id="id24">CSV Table</a></li>
+<li><a class="reference internal" href="#list-table" id="id25">List Table</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#document-parts" id="id26">Document Parts</a><ul>
+<li><a class="reference internal" href="#id2" id="id27">Table of Contents</a></li>
+<li><a class="reference internal" href="#automatic-section-numbering" id="id28">Automatic Section Numbering</a></li>
+<li><a class="reference internal" href="#document-header-footer" id="id29">Document Header &amp; Footer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#html-specific" id="id30">HTML-Specific</a><ul>
+<li><a class="reference internal" href="#meta" id="id31">Meta</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directives-for-substitution-definitions" id="id32">Directives for Substitution Definitions</a><ul>
+<li><a class="reference internal" href="#replacement-text" id="id33">Replacement Text</a></li>
+<li><a class="reference internal" href="#unicode-character-codes" id="id34">Unicode Character Codes</a></li>
+<li><a class="reference internal" href="#date" id="id35">Date</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#miscellaneous" id="id36">Miscellaneous</a><ul>
+<li><a class="reference internal" href="#including-an-external-document-fragment" id="id37">Including an External Document Fragment</a></li>
+<li><a class="reference internal" href="#raw-data-pass-through" id="id38">Raw Data Pass-Through</a></li>
+<li><a class="reference internal" href="#class" id="id39">Class</a></li>
+<li><a class="reference internal" href="#custom-interpreted-text-roles" id="id40">Custom Interpreted Text Roles</a></li>
+<li><a class="reference internal" href="#setting-the-default-interpreted-text-role" id="id41">Setting the Default Interpreted Text Role</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="admonitions">
+<h2>Admonitions</h2>
+<div class="section" id="specific-admonitions">
+<h3>Specific Admonitions</h3>
+<div class="admonition danger">
+<p class="first admonition-title">!DANGER!</p>
+<p class="last">Beware killer rabbits!</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This is a note admonition.</p>
+<p>This is the first line of the second paragraph.</p>
+<ul class="last simple">
+<li>The note contains all indented body elements
+following.</li>
+<li>It includes this bullet list.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a warning admonition.
+This is the second line of the first paragraph.</p>
+</div>
+</div>
+<div class="section" id="generic-admonition">
+<h3>Generic Admonition</h3>
+<div class="admonition admonition-and-by-the-way">
+<p class="first admonition-title">And, by the way...</p>
+<p class="last">You can make up your own admonition too.</p>
+</div>
+</div>
+</div>
+<div class="section" id="images">
+<h2>Images</h2>
+<div class="section" id="image">
+<h3>Image</h3>
+<img alt="alternate text" class="align-center" src="img/1.png" style="width: 100.0px; height: 50.0px;" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Symbol</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><img alt="img/1.png" class="first last" src="img/1.png" />
+</td>
+<td>Campground</td>
+</tr>
+<tr><td><img alt="img/1.png" class="first last" src="img/1.png" />
+</td>
+<td>Lake</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="figure">
+<h3>Figure</h3>
+<p>Captioned figures are not supported.</p>
+</div>
+</div>
+<div class="section" id="body-elements">
+<h2>Body Elements</h2>
+<div class="section" id="topic">
+<h3>Topic</h3>
+<div class="topic">
+<p class="topic-title">Topic Title</p>
+<p>Subsequent indented lines comprise
+the body of the topic, and are
+interpreted as body elements.</p>
+</div>
+</div>
+<div class="section" id="sidebar">
+<h3>Sidebar</h3>
+<p>This is an example of a sidebar.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Optional Sidebar Title</p>
+<p class="sidebar-subtitle">Optional Sidebar Subtitle</p>
+<p class="last">Subsequent indented lines comprise
+the body of the sidebar, and are
+interpreted as body elements.</p>
+</div>
+<p>Continuing text associated with the sidebar.</p>
+<p>More continuing text associated with the sidebar.
+More continuing text associated with the sidebar.
+And more continuing text associated with the sidebar.
+Still more continuing text associated with the sidebar.
+Final continuing text associated with the sidebar.</p>
+</div>
+<div class="section" id="line-block">
+<h3>Line Block</h3>
+<p>&quot;To Ma Own Beloved Lassie: A Poem on her 17th Birthday&quot;, by
+Ewan McTeagle (for Lassie O'Shea):</p>
+<blockquote>
+<div class="line-block">
+<div class="line">Lend us a couple of bob till Thursday.</div>
+<div class="line">I'm absolutely skint.</div>
+<div class="line">But I'm expecting a postal order and I can pay you back</div>
+<div class="line-block">
+<div class="line">as soon as it comes.</div>
+</div>
+<div class="line">Love, Ewan.</div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="parsed-literal-block">
+<h3>Parsed Literal Block</h3>
+<p>NOT SUPPORTED</p>
+</div>
+<div class="section" id="code">
+<h3>Code</h3>
+<pre class="code python literal-block">
+<span class="keyword">def</span> <span class="name function">my_function</span><span class="punctuation">():</span>  <span class="operator">//</span> <span class="name">my</span> <span class="name">demo</span> <span class="name">function</span>
+    <span class="literal string double">&quot;just a test&quot;</span>
+    <span class="keyword">print</span> <span class="literal number integer">8</span><span class="operator">/</span><span class="literal number integer">2</span>
+</pre>
+<pre class="code console literal-block">
+<span class="generic output">sudo /etc/init.d/alation shell</span>
+</pre>
+<pre class="code bash literal-block">
+<span class="comment hashbang">#!/bin/bash
+</span>
+<span class="name builtin">echo</span> -e <span class="literal string double">&quot;Please enter your name: &quot;</span>
+<span class="name builtin">read</span> name
+<span class="name builtin">echo</span> <span class="literal string double">&quot;Nice to meet you </span><span class="name variable">$name</span><span class="literal string double">&quot;</span>
+</pre>
+<pre class="code json literal-block">
+<span class="punctuation">{</span>
+   <span class="name tag">&quot;anObject&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+      <span class="name tag">&quot;numericProperty&quot;</span><span class="punctuation">:</span> <span class="literal number integer">-122</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;stringProperty&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;An offensive \&quot; is problematic&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;nullProperty&quot;</span><span class="punctuation">:</span> <span class="keyword constant">null</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;booleanProperty&quot;</span><span class="punctuation">:</span> <span class="keyword constant">true</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;dateProperty&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;2011-09-23&quot;</span>
+   <span class="punctuation">},</span>
+   <span class="name tag">&quot;arrayOfObjects&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>
+      <span class="punctuation">{</span>
+         <span class="name tag">&quot;item&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1</span>
+      <span class="punctuation">},</span>
+      <span class="punctuation">{</span>
+         <span class="name tag">&quot;item&quot;</span><span class="punctuation">:</span> <span class="literal number integer">2</span>
+      <span class="punctuation">},</span>
+      <span class="punctuation">{</span>
+         <span class="name tag">&quot;item&quot;</span><span class="punctuation">:</span> <span class="literal number integer">3</span>
+      <span class="punctuation">}</span>
+   <span class="punctuation">],</span>
+   <span class="name tag">&quot;arrayOfIntegers&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>
+      <span class="literal number integer">1</span><span class="punctuation">,</span>
+      <span class="literal number integer">2</span><span class="punctuation">,</span>
+      <span class="literal number integer">3</span><span class="punctuation">,</span>
+      <span class="literal number integer">4</span><span class="punctuation">,</span>
+      <span class="literal number integer">5</span>
+   <span class="punctuation">]</span>
+<span class="punctuation">}</span>
+</pre>
+<pre class="code sql literal-block">
+<span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="name">CUSTOMERS</span><span class="punctuation">(</span>
+   <span class="name">ID</span>   <span class="name builtin">INT</span>              <span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="punctuation">,</span>
+   <span class="name">NAME</span> <span class="name builtin">VARCHAR</span> <span class="punctuation">(</span><span class="literal number integer">20</span><span class="punctuation">)</span>     <span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="punctuation">,</span>
+   <span class="name">AGE</span>  <span class="name builtin">INT</span>              <span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="punctuation">,</span>
+   <span class="name">ADDRESS</span>  <span class="name builtin">CHAR</span> <span class="punctuation">(</span><span class="literal number integer">25</span><span class="punctuation">)</span> <span class="punctuation">,</span>
+   <span class="name">SALARY</span>   <span class="name builtin">DECIMAL</span> <span class="punctuation">(</span><span class="literal number integer">18</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">),</span>
+   <span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> <span class="punctuation">(</span><span class="name">ID</span><span class="punctuation">)</span>
+<span class="punctuation">);</span>
+</pre>
+</div>
+<div class="section" id="math">
+<h3>Math</h3>
+<div class="formula">
+<i>α</i><sub><i>t</i></sub>(<i>i</i>) = <i>P</i>(<i>O</i><sub>1</sub>, <i>O</i><sub>2</sub>, …<i>O</i><sub><i>t</i></sub>, <i>q</i><sub><i>t</i></sub> = <i>S</i><sub><i>i</i></sub><i>λ</i>)
+</div>
+</div>
+<div class="section" id="rubric">
+<h3>Rubric</h3>
+<p class="rubric">An informal heading that doesn't correspond to the document's structure.</p>
+</div>
+<div class="section" id="epigraph">
+<h3>Epigraph</h3>
+<blockquote class="epigraph">
+<p>No matter where you go, there you are.</p>
+<p class="attribution">&mdash;Buckaroo Banzai</p>
+</blockquote>
+<p>And, continuing.</p>
+</div>
+<div class="section" id="highlights">
+<h3>Highlights</h3>
+<blockquote class="highlights">
+<p>No matter where you go, there you are.</p>
+<p>No matter where you went, there you were.</p>
+</blockquote>
+<p>And, continuing.</p>
+</div>
+<div class="section" id="pull-quote">
+<h3>Pull-Quote</h3>
+<blockquote class="pull-quote">
+<p>No matter where you go, there you are.</p>
+<p>No matter where you went, there you were.</p>
+</blockquote>
+<p>And, continuing.</p>
+</div>
+<div class="section" id="compound-paragraph">
+<h3>Compound Paragraph</h3>
+<div class="compound">
+<p class="compound-first">The 'rm' command is very dangerous.  If you are logged
+in as root and enter</p>
+<pre class="compound-middle literal-block">
+cd /
+rm -rf *
+</pre>
+<p class="compound-last">you will erase the entire contents of your file system.</p>
+</div>
+</div>
+<div class="section" id="container">
+<h3>Container</h3>
+<div class="custom docutils container">
+This paragraph might be rendered in a custom way.</div>
+</div>
+</div>
+<div class="section" id="tables">
+<h2>Tables</h2>
+<div class="section" id="table">
+<h3>Table</h3>
+<table border="1" class="colwidths-auto docutils">
+<caption>Truth table for &quot;not&quot;</caption>
+<thead valign="bottom">
+<tr><th class="head">A</th>
+<th class="head">not A</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>False</td>
+<td>True</td>
+</tr>
+<tr><td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="csv-table">
+<h3>CSV Table</h3>
+<table border="1" class="colwidths-given docutils">
+<caption>Frozen Delights!</caption>
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Treat</th>
+<th class="head">Quantity</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Albatross</td>
+<td>2.99</td>
+<td>On a stick!</td>
+</tr>
+<tr><td>Crunchy Frog</td>
+<td>1.49</td>
+<td>If we took the bones out, it wouldn't be
+crunchy, now would it?</td>
+</tr>
+<tr><td>Gannet Ripple</td>
+<td>1.99</td>
+<td>On a stick!</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="list-table">
+<h3>List Table</h3>
+<table border="1" class="colwidths-given docutils">
+<caption>Frozen Delights!</caption>
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Treat</th>
+<th class="head">Quantity</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Albatross</td>
+<td>2.99</td>
+<td>On a stick!</td>
+</tr>
+<tr><td>Crunchy Frog</td>
+<td>1.49</td>
+<td>If we took the bones out, it wouldn't be
+crunchy, now would it?</td>
+</tr>
+<tr><td>Gannet Ripple</td>
+<td>1.99</td>
+<td>On a stick!</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="document-parts">
+<h2>Document Parts</h2>
+<div class="section" id="id2">
+<h3>Table of Contents</h3>
+<p>See <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html">reStructuredText Directives</a></p>
+</div>
+<div class="section" id="automatic-section-numbering">
+<h3>Automatic Section Numbering</h3>
+<p>Not Supported</p>
+</div>
+<div class="section" id="document-header-footer">
+<h3>Document Header &amp; Footer</h3>
+<p>See for yourself, above and below.</p>
+</div>
+</div>
+<div class="section" id="html-specific">
+<h2>HTML-Specific</h2>
+<div class="section" id="meta">
+<h3>Meta</h3>
+<p>Not Supported</p>
+</div>
+</div>
+<div class="section" id="directives-for-substitution-definitions">
+<h2>Directives for Substitution Definitions</h2>
+<div class="section" id="replacement-text">
+<h3>Replacement Text</h3>
+<p>Yes, reStructuredText is a long word, so I can't blame anyone for wanting to
+abbreviate it.</p>
+<p>I recommend you try <a class="reference external" href="http://www.python.org/">Python, <em>the</em> best language around</a>.</p>
+</div>
+<div class="section" id="unicode-character-codes">
+<h3>Unicode Character Codes</h3>
+<p>Copyright © 2003, BogusMegaCorp™—all rights reserved.</p>
+</div>
+<div class="section" id="date">
+<h3>Date</h3>
+<p>Today's date is 2020-09-03.</p>
+<p>This document was generated on 2020-09-03 at 09:29.</p>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous</h2>
+<div class="section" id="including-an-external-document-fragment">
+<h3>Including an External Document Fragment</h3>
+<p>You can use include this content.</p>
+</div>
+<div class="section" id="raw-data-pass-through">
+<h3>Raw Data Pass-Through</h3>
+<hr width=50 size=10></div>
+<div class="section" id="class">
+<h3>Class</h3>
+<p class="special">This is a &quot;special&quot; paragraph.</p>
+<p>This is an ordinary paragraph.</p>
+<p class="multiple">First paragraph.</p>
+<p class="multiple">Second paragraph.</p>
+<ul class="simple">
+<li>bullet list</li>
+<li class="classy item">second item, with class argument</li>
+</ul>
+<!--  -->
+<blockquote class="highlights">
+Block quote text.</blockquote>
+</div>
+<div class="section" id="custom-interpreted-text-roles">
+<h3>Custom Interpreted Text Roles</h3>
+<p>An example of using <span class="custom">interpreted text</span></p>
+<p><em class="custom">text</em></p>
+<p><span class="raw-role">raw text</span></p>
+<p><span class="special">interpreted text</span></p>
+</div>
+<div class="section" id="setting-the-default-interpreted-text-role">
+<h3>Setting the Default Interpreted Text Role</h3>
+<p>any subsequent use of implicit-role interpreted text in the document will use the &quot;subscript&quot; role:</p>
+<p>An example of a <sub>default</sub> role.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+It was what it was.
+</div>
+
+</div><!-- /.toBeIndexed -->
+</div>
+<footer>
+<div class="rst-footer-nav" role="navigation" aria-label="footer navigation">
+
+<a href="reSTMarkup.html" title="Accesskey Alt(+Shift)+p" accesskey="p">Previous</a><span class="bar">|</span>
+</div></footer>
+</div>
+</div>
+</section>
+</div>
+
+
+<script type="text/javascript">
+var DOCUMENTATION_OPTIONS = {
+URL_ROOT:'./',
+VERSION:'',
+COLLAPSE_INDEX:false,
+FILE_SUFFIX:'.html',
+HAS_SOURCE:  true
+};
+</script>
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/underscore.js"></script>
+<script type="text/javascript" src="static/js/doctools.js"></script>
+<script type="text/javascript" src="static/js/language_data.js"></script>
+<script type="text/javascript" src="static/js/searchtools.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="static/js/theme.js"></script>
+<script type="text/javascript">
+jQuery(function () {
+SphinxRtdTheme.StickyNav.enable();
+});
+</script>
+<script type="text/javascript" id="idPiwikScriptPlaceholder"></script>
+<header>
+<div class="header__container">
+<a href="index.html"><img class="raw_img" height="64" src="img/bannerLogo.png" alt="Documentation" /></a>
+
+<ul class="header__links"><li><a href="https://www.gh.works">Community</a></li><li><a href="https://github.com/ghartsel">GitHub</a></li><li><a href="gene@gh.works">Contact</a></li><li><a href="https://www.gh.works/">About</a></li></ul>
+</div>
+</header>
+</body>
+</html>
