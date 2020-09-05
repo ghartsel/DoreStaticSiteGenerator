@@ -47,7 +47,7 @@ search = "false"
 
     [[domains.classes]]
     name = "reStructuredText (ReST) Cheat Sheet"
-    description = "ReST quick reference."
+    description = "ReST Quick Reference."
     icon = "document.png"
 
         [[domains.classes.topics]]
