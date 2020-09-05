@@ -37,19 +37,11 @@ search = "false"
 
     [[badges.properties]]
     text = "Community"
-    url = "https://www.gh.works"
+    url = "https://github.community/"
 
     [[badges.properties]]
     text = "GitHub"
-    url = "https://github.com/ghartsel"
-
-    [[badges.properties]]
-    text = "Contact"
-    url = "gene@gh.works"
-
-    [[badges.properties]]
-    text = "About"
-    url = "https://www.gh.works/"
+    url = "https://github.com/ghartsel/DoreStaticSiteGenerator/tree/master/ReSTCheatSheet"
 
 [domains]
 
