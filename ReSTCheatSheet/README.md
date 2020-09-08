@@ -1,9 +1,9 @@
 # ReSTCheatSheet
 Quick reference for using ReStructuredText markup and directives with the Dore static site generator.
 
-This is the document source. You can find the published version at this [GitHub Pages location](https://ghartsel.github.io/demoyard/index.html).
+This is the document source.
 
-This document was published using the Dore static site generator.
+Publish this document by running the Dore static site generator on it. After installing the Dore static site generater, generate this document: `go run .`
 
 ## Contents
 
@@ -19,4 +19,4 @@ docmap.toml
 
 > Document HTML output and theme files
 
-After installing the Dore static site generater, generate this document: `go run .`
+
