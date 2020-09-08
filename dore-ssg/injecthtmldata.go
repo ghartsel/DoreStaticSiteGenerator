@@ -93,7 +93,7 @@ var PostfixTerminal = []byte(`
 
 var landingPageSearch = []byte(`
 <div class="landing-search" role="search">
-<form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+<form id="rtd-search-form" class="wy-form" action="searchResults.html" method="get">
 <input type="text" name="q" placeholder="Search this document" autofocus />
 <input type="hidden" name="check_keywords" value="yes" />
 <input type="hidden" name="area" value="default" />
