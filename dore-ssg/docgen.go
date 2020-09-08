@@ -317,6 +317,7 @@ func makeNavEntry(prevlevel string, level string, heading *string, fname string)
 	anchor := strings.Replace(strings.ToLower(*heading), " ", "-", -1)
 	anchor = strings.Replace(anchor, ".", "", -1)
 	anchor = strings.Replace(anchor, ":", "", -1)
+	anchor = strings.Replace(anchor, "_", "-", -1)
 
 	// apply html according to heading level
 
