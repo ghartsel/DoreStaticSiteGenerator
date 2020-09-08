@@ -1,13 +1,13 @@
 [meta]
-title = "SVP Dashboard User Guide"
-subtitle = "How to Use the SVP Dashboard"
-abstract = "The SunSpec System Validation Platform (SVP) Dashboard enables visibility and control of SunSpec-enabled devices. The web browser-based interface leverages standardized device information model protocols and data structures to facilitate device development, certification, and support activities."
-keywords = ["wordA", "wordB", "wordC"]
+title = "Real-time Kernel for Autonomous Agents"
+subtitle = "Kernel Reference and Developer Guide"
+abstract = "The multi-tasking kernel is a general solution for managing asynchronous events typical of autonomous agents."
+keywords = ["kernel", "real-time", "agent"]
 status = "Draft"
-docversion = "1.0"
+docversion = "0.9"
 id = "000001"
 author = ""
-org = "My Company, Inc."
+org = "Demoyard, Inc."
 prodName = ""
 prodVersion = ""
 
@@ -23,12 +23,12 @@ stylesheet = "theme.css"
 location = "/share"
 
     [[reviews.reviewers]]
-    name = "John Smeth"
-    email = "jsmeth@company.com"
+    name = ""
+    email = ""
 
     [[reviews.reviewers]]
-    name = "John Smeth"
-    email = "jsmeth@company.com"
+    name = ""
+    email = ""
 
 [publishes]
 
@@ -41,15 +41,11 @@ search = "false"
 
     [[badges.properties]]
     text = "Community"
-    url = "https://www.gh.works"
+    url = "https://github.community/"
 
     [[badges.properties]]
     text = "GitHub"
-    url = "https://github.com/ghartsel"
-
-    [[badges.properties]]
-    text = "Contact"
-    url = "gene@gh.works"
+    url = "https://github.com/ghartsel/DoreStaticSiteGenerator/tree/master/demo"
 
     [[badges.properties]]
     text = "About"
@@ -59,80 +55,105 @@ search = "false"
 
     [[domains.classes]]
     name = "Getting Started"
-    description = "Read these documents to get started with the product."
+    description = "Installation and Configuration"
     icon = "getstarted.png"
 
         [[domains.classes.topics]]
-        filename = "svp_ataGlance"
+        filename = "quickstart"
         author = "Joe Auth2"
         status = "Complete"
 
         [[domains.classes.topics]]
-        filename = "svp_gettingStarted"
+        filename = "kernelIntegration"
+        author = "Joe Auth3"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "hwIntegration"
         author = "Joe Auth3"
         status = "Complete"
 
     [[domains.classes]]
-    name = "GUI User Guide"
-    description = "Introduction to GUI basics."
+    name = "Overview"
+    description = "Introduction to the Real-time Kernel"
     icon = "how.png"
 
         [[domains.classes.topics]]
-        filename = "svp_dashUI"
+        filename = "rtSystems"
+        author = "Joe Auth4"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "concepts"
+        author = "Joe Auth4"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "sysReliability"
         author = "Joe Auth4"
         status = "Complete"
 
     [[domains.classes]]
     name = "Tutorials"
-    description = "Learn the product functions."
+    description = "Autonomous Agent Applications"
     icon = "tutorial.png"
 
         [[domains.classes.topics]]
-        filename = "svp_t_readwrite"
+        filename = "tutFirst"
         author = "Joe Auth5"
         status = "Complete"
 
         [[domains.classes.topics]]
-        filename = "svp_t_exportImage"
+        filename = "tutRequest"
         author = "Joe Auth5"
-        status = "Complete"
-
-        [[domains.classes.topics]]
-        filename = "svp_t_manageIM"
-        author = "Joe Auth2"
-        status = "Complete"
-
-        [[domains.classes.topics]]
-        filename = "svp_t_genWorkbook"
-        author = "Joe Auth3"
-        status = "Complete"
-
-        [[domains.classes.topics]]
-        filename = "svp_t_createPICS"
-        author = "Joe Auth4"
         status = "Complete"
 
     [[domains.classes]]
-    name = "Resources"
-    description = "Get additional support and read the reference material."
+    name = "API Reference"
+    description = "API Reference"
     icon = "support.png"
 
         [[domains.classes.topics]]
-        filename = "svp_support"
+        filename = "conventions"
         author = "Joe Auth5"
         status = "Complete"
 
         [[domains.classes.topics]]
-        filename = "svp_acronyms"
+        filename = "ifSpecification"
+        author = "Joe Auth5"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "dataStructures"
         author = "Joe Auth5"
         status = "Complete"
 
     [[domains.classes]]
-    name = "Release Notes"
-    description = "Learn what's new."
+    name = "Performance"
+    description = "CPU and Memory Performance Measurements"
     icon = "usecase.png"
 
         [[domains.classes.topics]]
-        filename = "svp_release"
+        filename = "perfMemory"
+        author = "Joe Auth5"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "perfCPU"
+        author = "Joe Auth5"
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Configuration Dashboard"
+    description = "Kernel Configruation GUI"
+    icon = "usecase.png"
+
+        [[domains.classes.topics]]
+        filename = "dashOverview"
+        author = "Joe Auth5"
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "dashUG"
         author = "Joe Auth5"
         status = "Complete"
