@@ -1,0 +1,164 @@
+[meta]
+title = "Real-time Kernel for Autonomous Agents"
+subtitle = "Kernel Reference and Developer Guide"
+abstract = "The multi-tasking kernel is a general solution for managing asynchronous events typical of autonomous agents."
+keywords = ["kernel", "real-time", "agent"]
+status = "Draft"
+docversion = "0.9"
+id = "000001"
+author = ""
+org = "Demoyard, Inc."
+prodName = ""
+prodVersion = ""
+
+[params]
+validate = "false"
+continue = "true"
+
+[authors]
+markup = "rst2html"
+stylesheet = "theme.css"
+
+[reviews]
+location = "/share"
+
+    [[reviews.reviewers]]
+    name = ""
+    email = ""
+
+    [[reviews.reviewers]]
+    name = ""
+    email = ""
+
+[publishes]
+
+[options]
+header = "false"
+footer = "false"
+search = "false"
+
+[badges]
+
+    [[badges.properties]]
+    text = "Community"
+    url = "https://github.community/"
+
+    [[badges.properties]]
+    text = "GitHub"
+    url = "https://github.com/ghartsel/DoreStaticSiteGenerator/tree/master/demo"
+
+    [[badges.properties]]
+    text = "About"
+    url = "https://www.gh.works/"
+
+[domains]
+
+    [[domains.classes]]
+    name = "Getting Started"
+    description = "Installation and Configuration"
+    icon = "getstarted.png"
+
+        [[domains.classes.topics]]
+        filename = "quickstart"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "kernelIntegration"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "hwIntegration"
+        author = ""
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Overview"
+    description = "Introduction to the Real-time Kernel"
+    icon = "how.png"
+
+        [[domains.classes.topics]]
+        filename = "rtSystems"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "concepts"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "sysReliability"
+        author = ""
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Tutorials"
+    description = "Autonomous Agent Applications"
+    icon = "tutorial.png"
+
+        [[domains.classes.topics]]
+        filename = "tutFirst"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "tutCustom"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "tutRequest"
+        author = ""
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "API Reference"
+    description = "API Reference"
+    icon = "support.png"
+
+        [[domains.classes.topics]]
+        filename = "conventions"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "ifSpecification"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "dataStructures"
+        author = ""
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Performance"
+    description = "CPU and Memory Performance Measurements"
+    icon = "usecase.png"
+
+        [[domains.classes.topics]]
+        filename = "perfMemory"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "perfCPU"
+        author = ""
+        status = "Complete"
+
+    [[domains.classes]]
+    name = "Configuration Dashboard"
+    description = "Kernel Configruation GUI"
+    icon = "usecase.png"
+
+        [[domains.classes.topics]]
+        filename = "dashOverview"
+        author = ""
+        status = "Complete"
+
+        [[domains.classes.topics]]
+        filename = "dashUG"
+        author = ""
+        status = "Complete"
