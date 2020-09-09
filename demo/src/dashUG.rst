@@ -18,10 +18,10 @@ Help is always provided on the last line of the screen.
 File Location
 -------------
 
-This screen is used to enter include file pathnames used in the configuration file.  The name of the output file is also entered.  Any valid DOS path- and filename may be entered.
+This screen is used to enter include file pathnames used in the configuration file.  The name of the output file is also entered.  Any valid path- and filename may be entered.
 
 .. image:: img/ug1.png
-   :width: 600 px
+   :width: 500 px
    :align: center
 
 A.  These include files are installed with the kernel.  The pathname where the files currently reside, and where they can be located by the assembler, is entered.
@@ -47,7 +47,7 @@ Resource and Environment Definition
 -----------------------------------
 
 .. image:: img/ug3.png
-   :width: 400 px
+   :width: 500 px
    :align: center
 
 

@@ -1,7 +1,7 @@
 Dashboard Introduction
 =========================================================================
 
-SYSBLD is a program that runs in the DOS environment.  The user is prompted for system information, which is used to create an ASCII source file.  This file is then assembled to produce an object file, which is linked with the kernel and application software to become part of the target system.
+SYSBLD automates kernel configuration.  The user is prompted for system information, which is used to create an ASCII source file.  This file is then assembled to produce an object file, which is linked with the kernel and application software to become part of the target system.
 
 Purpose of the Utility
 ----------------------
