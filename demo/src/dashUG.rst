@@ -22,7 +22,6 @@ This screen is used to enter include file pathnames used in the configuration fi
 
 .. image:: img/ug1.png
    :width: 600 px
-   :alt: Dashboard
    :align: center
 
 A.  These include files are installed with the kernel.  The pathname where the files currently reside, and where they can be located by the assembler, is entered.
@@ -35,7 +34,6 @@ The following figure shows the final screen displayed when the system is success
 
 .. image:: img/ug2.png
    :width: 500 px
-   :alt: Dashboard
    :align: center
 
 
@@ -50,7 +48,6 @@ Resource and Environment Definition
 
 .. image:: img/ug3.png
    :width: 400 px
-   :alt: Dashboard
    :align: center
 
 
@@ -75,7 +72,6 @@ Task Definition
 
 .. image:: img/ug4.png
    :width: 500 px
-   :alt: Dashboard
    :align: center
 
 

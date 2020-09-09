@@ -26,7 +26,6 @@ These control registers may be located on any 4K byte boundary.  The kernel uses
 
 .. image:: img/memoryMap.png
    :width: 500 px
-   :alt: Memory Map
    :align: center
 
 APPLICATION DYNAMIC DATA AREA
