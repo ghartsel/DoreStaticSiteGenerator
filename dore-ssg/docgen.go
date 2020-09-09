@@ -508,6 +508,9 @@ func main() {
 			                */
 			            default:
 			                if contentBlock && y != "</body>" {
+			                	if (y == `<div class="system-message">`) {
+			                		fmt.Printf ("system-message: Check %s.rst for invalid markup\n", topic.Filename)
+			                	}
 			                    newhtml += y + "\n"
 			                }
 			                if y == "<body>" {
