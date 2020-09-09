@@ -14,12 +14,9 @@ var navPrefix = []byte(`<nav data-toggle="wy-nav-shift" class="wy-nav-side">
 </li></ul>
 </div>
 <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-
-<ul class="current">
 `)
 
 var navPostfix = []byte(`
-</ul>
 </div>
 </div>
 </nav>

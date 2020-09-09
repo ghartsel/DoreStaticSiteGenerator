@@ -322,6 +322,7 @@ func makeNavEntry(prevlevel string, level string, heading *string, fname string)
 	// apply html according to heading level
 
 	if level == "1"{
+//		naventry = `<li class="toctree-l` + level + ` current"><a class="reference internal" href="` + fname + `.html">` + *heading + `</a>`
 		naventry = `<li class="toctree-l` + level + `"><a class="reference internal" href="` + fname + `.html">` + *heading + `</a>`
 	} else {
 		if (level > prevlevel) {
@@ -350,7 +351,9 @@ func navGen() {
 	for _, class := range config.Domains.Classes {
 
 		// build category heading
-		mainNav += `<li class="nav-caption"><span class="caption-text">` + class.Name + `</span></li>`
+		mainNav += `<p class="caption"><span class="caption-text">` + class.Name + `</span></p>`
+		mainNav += `<ul class="current">`
+//		mainNav += `<ul>`
 
 		// make nav entries for category topics
 		for _, topic := range class.Topics {
@@ -434,6 +437,8 @@ func navGen() {
 		    // update source file list for search indexer
 		    docList = append (docList, topic.Filename)
 		}
+		
+		mainNav += "</ul>"
 	}
 
 	mainNav += string(navPostfix)
