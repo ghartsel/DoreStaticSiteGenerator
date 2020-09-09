@@ -2365,7 +2365,7 @@ a {
     cursor: pointer;
 }
 a:hover {
-/*    color: #E45E25; */
+/*    color: #86bf41; */
     text-decoration: underline;
 }
 a:visited {
@@ -2448,7 +2448,7 @@ h1 {
     margin-bottom: 1.5rem;
     font-size: 25px;
     line-height: 1; 
-    color: #E45E25;
+    color: #86bf41;
 }
 
 h2 {
@@ -2457,7 +2457,7 @@ h2 {
     margin-bottom: 1.4rem;
     font-size: 20px;
     line-height: 1; 
-    color: #00416B;
+    color: #409fbf;
 }
 
 h3 {
@@ -2466,24 +2466,24 @@ h3 {
     margin-top: 2rem;
     margin-bottom: 1.4rem;
     line-height: 1; 
-    color: #E45E25;
+    color: #86bf41;
 }
 h4 {
     font-size: 16px;
     font-weight: 300;
-    color: #00416B;
+    color: #409fbf;
 }
 h5 {
     font-size: 15px;
     font-weight: 300;
     font-style: oblique;
-    color: #E45E25;
+    color: #86bf41;
 }
 h6 {
     font-size: 14px;
     font-weight: 300;
     font-style: oblique;
-    color: #00416B;
+    color: #409fbf;
 }
 hr {
     display: block;
@@ -2771,7 +2771,7 @@ div[class^='highlight-'] {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 15px;
-    color: #E45E25;
+    color: #86bf41;
     white-space: nowrap;
 }
 .wy-menu-vertical li.nav-caption {
@@ -2784,7 +2784,7 @@ div[class^='highlight-'] {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 14px;
-    color: #E45E25;
+    color: #86bf41;
     white-space: nowrap;
 }
 .wy-menu-vertical ul {
@@ -2995,7 +2995,7 @@ div[class^='highlight-'] {
 }
 .wy-side-nav-search li.docsite {
     font-family: "Museo Sans", "Source Sans Pro",  sans-serif;
-/*    background-color: #E45E25; ori */
+/*    background-color: #86bf41; ori */
     background-color: #FFFFFF;
 }
 .wy-side-nav-search li.docsite a {
@@ -3088,7 +3088,7 @@ div[class^='highlight-'] {
 .wy-nav-top {
     display: none;
     background: #d67100;
-    background: #E45E25;
+    background: #86bf41;
     color: #fff;
     padding: .4045em .809em;
     position: relative;
@@ -3111,7 +3111,7 @@ div[class^='highlight-'] {
     margin-right: 12px;
     height: 45px;
     width: 45px;
-    background-color: #E45E25;
+    background-color: #86bf41;
     padding: 5px;
     border-radius: 100%}
 .wy-nav-top i {
@@ -3216,7 +3216,7 @@ footer p {
 }
 .bar {
     font-size: 15px;
-    color: #E45E25;
+    color: #86bf41;
     padding-left: 0.4em;
     padding-right: 0.2em;
 }
@@ -3933,7 +3933,7 @@ footer p {
     background-color: #d67100 !important;
 }
 .bg-link-color-hover {
-    background-color: #E45E25 !important;
+    background-color: #86bf41 !important;
 }
 .bg-link-color-alt {
     background-color: red !important;
@@ -3954,7 +3954,7 @@ footer p {
     background-color: #FFFFFF !important;
 }
 .bg-menu-logo-color {
-    background-color: #E45E25 !important;
+    background-color: #86bf41 !important;
 }
 @media screen and (min-width: 1400px) {
     h1, h2, .rst-content p.caption {
@@ -4015,7 +4015,7 @@ footer p {
 }
 #EditMeOnGitHub {
     color: white;
-    background-color: #E45E25;
+    background-color: #86bf41;
     display: block;
     padding: 6px 10px;
     border-radius: 15px;
@@ -4200,7 +4200,7 @@ td.field-body p.first {
     background-color: #8c8c8c;
 }
 .rst-content ul.horizbuttons-primary-xxxl>li, .rst-content ul.horizbuttons-primary-xxl>li, .rst-content ul.horizbuttons-primary-m>li {
-    background-color: #E45E25;
+    background-color: #86bf41;
 }
 .rst-content ul.horizbuttons-striking-xxxl>li, .rst-content ul.horizbuttons-striking-xxl>li, .rst-content ul.horizbuttons-striking-m>li {
     background-color: #9b58b6;
@@ -4398,7 +4398,7 @@ code.kbd, .rst-content tt.kbd, kbd {
     color: #ccc;
 }
 .stealth-btn:hover, .stealth-btn:hover .stealth-btn-text {
-    color: #E45E25;
+    color: #86bf41;
 }
 .guilabel {
     background-color: #c2e0f0;
