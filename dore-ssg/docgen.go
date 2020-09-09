@@ -408,7 +408,7 @@ func navGen() {
 
 		        if tokenType == html.SelfClosingTagToken {
 		        	if itoken := tokenizer.Token(); itoken.Data == "img" {
-		        		imgPath := itoken.Attr[2].Val
+		        		imgPath := itoken.Attr[0].Val
 						if err := copyImg("src/" + imgPath, "pub/" + imgPath); err != nil {
 							fmt.Println(err.Error())
 						}
