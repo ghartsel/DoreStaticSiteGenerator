@@ -76,7 +76,7 @@ search = "false"
     [[domains.classes]]
     name = "Overview"
     description = "Introduction to the Real-time Kernel"
-    icon = "how.png"
+    icon = "support.png"
 
         [[domains.classes.topics]]
         filename = "rtSystems"
@@ -116,7 +116,7 @@ search = "false"
     [[domains.classes]]
     name = "API Reference"
     description = "API Reference"
-    icon = "support.png"
+    icon = "catalog.png"
 
         [[domains.classes.topics]]
         filename = "conventions"
@@ -151,7 +151,7 @@ search = "false"
     [[domains.classes]]
     name = "Configuration Dashboard"
     description = "Kernel Configruation GUI"
-    icon = "usecase.png"
+    icon = "how.png"
 
         [[domains.classes.topics]]
         filename = "dashOverview"
