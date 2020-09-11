@@ -270,7 +270,12 @@ func landingPageGen() {
     lpContent += string(Prefix)
     lpContent += `<div class="landing"><h1 class="landing-title">` + config.Meta.Title + `</h1>`
     lpContent += `<div class="landing-version"> Version ` + config.Meta.DocVersion + `</div>`
+
     lpContent += string(landingPageSearch)
+
+	lpContent += `<div class="abstract">`
+	lpContent += `<p>` + config.Meta.Abstract + `</p></div>`
+
     lpContent += `<div class="tiles-flex">`
 
     for _, class := range config.Domains.Classes {
