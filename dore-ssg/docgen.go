@@ -99,10 +99,10 @@ type topicInfo struct {
 	Status		string
 }
 
+var topics map[string]bool
 var config docConfig
 var mainNav = ""
-var docList []string	// useful for indexer and nav
-var buildList []string
+var docList []string	// useful for indexer and prev|next nav
 
 func cleanPubDir() {
 	file, err := os.Open("pub")
@@ -193,17 +193,6 @@ func getConfig() error {
 	return nil
 }
 
-func onBuildList(fname string) bool {
-	onList := false
-	for _, source := range buildList {
-		if source == fname {
-			onList = true
-			break
-		}
-	}
-	return onList
-}
-
 func publishBaseHTML() error {
 
 	// only transform topics changed since last build
@@ -220,6 +209,8 @@ func publishBaseHTML() error {
 	for _, class := range config.Domains.Classes {
 		for _, topic := range class.Topics {
 
+			topics[topic.Filename] = false
+
 			file, err1 = os.Stat("src/" + topic.Filename + ".rst")
 		    if err1 != nil {
 		        fmt.Println(err1)
@@ -228,15 +219,15 @@ func publishBaseHTML() error {
 		    modifiedtime := file.ModTime().Unix()
 
 		    if (modifiedtime > lastBuildTime) {
+
+		    	topics[topic.Filename] = true
+
 			    _, err := exec.Command(xform, "--link-stylesheet", "--no-doc-title", css, "src/" + topic.Filename + ".rst", "pub/" + topic.Filename + ".html").Output()
 
 			    if err != nil {
 			        fmt.Printf("Error: %s %s\n", topic.Filename, err)
 		        	return err
 			    }
-
-			    // add to build list
-			    buildList = append (buildList, topic.Filename)
 		    }
 
 		    // update source file list for search indexer
@@ -488,7 +479,7 @@ func main() {
 	now := time.Now()
 	startTime := now.UnixNano()
 
-//	cleanPubDir() // remove deleted content
+	topics = make(map[string]bool)
 
 	//
 	// parse TOML config file, validating settings
@@ -521,7 +512,7 @@ func main() {
 			// inject theme elements into HTML
 			//
 
-			if onBuildList(topic.Filename) {
+			if topics[topic.Filename] == true {
 				doc, err := ioutil.ReadFile("pub/" + topic.Filename + ".html")
 				if err != nil {
 				    fmt.Println(err)
