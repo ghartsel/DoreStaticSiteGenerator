@@ -102,6 +102,7 @@ type topicInfo struct {
 var config docConfig
 var mainNav = ""
 var docList []string	// useful for indexer and nav
+var buildList []string
 
 func cleanPubDir() {
 	file, err := os.Open("pub")
@@ -192,21 +193,54 @@ func getConfig() error {
 	return nil
 }
 
+func onBuildList(fname string) bool {
+	onList := false
+	for _, source := range buildList {
+		if source == fname {
+			onList = true
+			break
+		}
+	}
+	return onList
+}
+
 func publishBaseHTML() error {
 
-	// only transform changed topics
+	// only transform topics changed since last build
+
+	lastBuildTime := (int64)(0)
+	file, err1 := os.Stat("pub/index.html")
+	if err1 == nil {
+		lastBuildTime = file.ModTime().Unix()
+	}
 
 	xform := config.Authors.Markup
     css := "--stylesheet=static/css/" + config.Publishes.Stylesheet
 
 	for _, class := range config.Domains.Classes {
 		for _, topic := range class.Topics {
-		    _, err := exec.Command(xform, "--link-stylesheet", "--no-doc-title", css, "src/" + topic.Filename + ".rst", "pub/" + topic.Filename + ".html").Output()
 
-		    if err != nil {
-		        fmt.Printf("Error: %s %s\n", topic.Filename, err)
-	        	return err
+			file, err1 = os.Stat("src/" + topic.Filename + ".rst")
+		    if err1 != nil {
+		        fmt.Println(err1)
 		    }
+
+		    modifiedtime := file.ModTime().Unix()
+
+		    if (modifiedtime > lastBuildTime) {
+			    _, err := exec.Command(xform, "--link-stylesheet", "--no-doc-title", css, "src/" + topic.Filename + ".rst", "pub/" + topic.Filename + ".html").Output()
+
+			    if err != nil {
+			        fmt.Printf("Error: %s %s\n", topic.Filename, err)
+		        	return err
+			    }
+
+			    // add to build list
+			    buildList = append (buildList, topic.Filename)
+		    }
+
+		    // update source file list for search indexer
+		    docList = append (docList, topic.Filename)
 		}
 	}
 
@@ -441,9 +475,6 @@ func navGen() {
 		    	mainNav += "</li></ul>"
 		    }
 		    mainNav += "</li>"
-
-		    // update source file list for search indexer
-		    docList = append (docList, topic.Filename)
 		}
 		
 		mainNav += "</ul>"
@@ -457,7 +488,7 @@ func main() {
 	now := time.Now()
 	startTime := now.UnixNano()
 
-	cleanPubDir() // remove deleted content
+//	cleanPubDir() // remove deleted content
 
 	//
 	// parse TOML config file, validating settings
@@ -490,91 +521,76 @@ func main() {
 			// inject theme elements into HTML
 			//
 
-			doc, err := ioutil.ReadFile("pub/" + topic.Filename + ".html")
-			if err != nil {
-			    fmt.Println(err)
+			if onBuildList(topic.Filename) {
+				doc, err := ioutil.ReadFile("pub/" + topic.Filename + ".html")
+				if err != nil {
+				    fmt.Println(err)
+				}
+
+				file_content := string(doc)
+				lines := strings.Split(file_content, "\n")
+				contentBlock := false
+
+				for _, y := range lines{
+				    if len (y) > 1 {
+				        if contentBlock && y != "</body>" {
+				           	// report errors reported in transformed content
+				           	if (y == `<div class="system-message">`) {
+				           		fmt.Printf ("system-message: Check %s.rst for invalid markup\n", topic.Filename)
+				        	}
+				            newhtml += y + "\n"
+				        }
+				        if y == "<body>" {
+				            // inject <head>
+				            newhtml += string(Prefix)
+				            newhtml += string(PrefixNav)
+
+				            // generate search div
+
+				            // inject nav sidebar and prev-next divs
+				            newhtml += mainNav
+				            newhtml += string(PreContent)
+				            if (docListIndex < (len(docList) - 1)) {
+				               	newhtml += `<a href="` + docList[docListIndex + 1] + `.html` + `" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">Next</a><span class="bar  float-right">|</span>`
+				            }
+				            if docListIndex > 0 {
+				               	newhtml += `<a href="` + docList[docListIndex - 1] + `.html` + `" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+p">Previous</a>`
+				            }
+				            newhtml += string(PreContentEnd)
+
+				            // change state
+				            contentBlock = true
+				        }
+				        if y == "</body>" {
+				            // inject <footer> and js
+
+				            newhtml += string(PostfixNav) + "\n"
+				            if docListIndex > 0 {
+					            newhtml += `<a href="` + docList[docListIndex - 1] + `.html` + `" title="Accesskey Alt(+Shift)+p" accesskey="p">Previous</a><span class="bar">|</span>`
+					        }
+				            if (docListIndex < (len(docList) - 1)) {
+					            newhtml += `<a href="` + docList[docListIndex + 1] + `.html` + `" title="Accesskey Alt(+Shift)+n" accesskey="n">Next</a>`
+					        }
+				            newhtml += string(PostfixNavEnd) + "\n"
+				            newhtml += string(Postfix) + "\n"
+
+							// insert badges
+							newhtml += `<ul class="header__links">`
+							for _, badge := range config.Badges.Properties {
+								newhtml += `<li><a href="` + badge.Url + `">` + badge.Text + `</a></li>`
+							}
+							newhtml += `</ul>`
+							newhtml += string(PostfixTerminal)
+		                    break
+		                }
+			        }
+			    }
+			    err = ioutil.WriteFile("pub/" + topic.Filename + ".html", []byte(newhtml), 0777)
+			    if err != nil {
+			        fmt.Println(err)
+			    }
+
 			}
-
-			file_content := string(doc)
-			lines := strings.Split(file_content, "\n")
-			contentBlock := false
-
-			for _, y := range lines{
-			    if len (y) > 1 {
-			        switch y[1:3] {
-			            // make heading anchors
-			            case "h1", "h2", "h3", "h4":
-			            	newhtml += y + "\n"
-			            	/*
-			                tmp := bytes.Split([]byte(y[4:]), []byte("<"))
-			                heading := string(tmp[0])
-			                anchor := strings.Replace(strings.ToLower(heading), " ", "-", -1)
-			                anchor = strings.Replace(anchor, ".", "-dot", -1)
-			                anchor = strings.Replace(anchor, ":", "-colon", -1)
-			                entry := y[0:4] + heading + `<a class="headerlink" href="#` + anchor + `"></a><` + string(tmp[1])
-			                newhtml += entry + "\n"
-			                */
-			            default:
-			                if contentBlock && y != "</body>" {
-			                	if (y == `<div class="system-message">`) {
-			                		fmt.Printf ("system-message: Check %s.rst for invalid markup\n", topic.Filename)
-			                	}
-			                    newhtml += y + "\n"
-			                }
-			                if y == "<body>" {
-			                    // inject <head>
-			                    newhtml += string(Prefix)
-			                    newhtml += string(PrefixNav)
-
-			                    // generate search div
-
-			                    // inject nav sidebar and prev-next divs
-			                    newhtml += mainNav
-			                    newhtml += string(PreContent)
-			                    if (docListIndex < (len(docList) - 1)) {
-			                    	newhtml += `<a href="` + docList[docListIndex + 1] + `.html` + `" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">Next</a><span class="bar  float-right">|</span>`
-			                    }
-			                    if docListIndex > 0 {
-			                    	newhtml += `<a href="` + docList[docListIndex - 1] + `.html` + `" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+p">Previous</a>`
-			                    }
-			                    newhtml += string(PreContentEnd)
-
-			                    // change state
-			                    contentBlock = true
-			                }
-			                if y == "</body>" {
-			                    // inject <footer> and js
-
-			                    newhtml += string(PostfixNav) + "\n"
-			                    if docListIndex > 0 {
-				                    newhtml += `<a href="` + docList[docListIndex - 1] + `.html` + `" title="Accesskey Alt(+Shift)+p" accesskey="p">Previous</a><span class="bar">|</span>`
-				                }
-			                    if (docListIndex < (len(docList) - 1)) {
-				                    newhtml += `<a href="` + docList[docListIndex + 1] + `.html` + `" title="Accesskey Alt(+Shift)+n" accesskey="n">Next</a>`
-				                }
-			                    newhtml += string(PostfixNavEnd) + "\n"
-			                    newhtml += string(Postfix) + "\n"
-
-								// insert badges
-
-								newhtml += `<ul class="header__links">`
-								for _, badge := range config.Badges.Properties {
-									newhtml += `<li><a href="` + badge.Url + `">` + badge.Text + `</a></li>`
-								}
-								newhtml += `</ul>`
-
-								newhtml += string(PostfixTerminal)
-
-			                    break
-			                }
-		            }
-		        }
-		    }
-		    err = ioutil.WriteFile("pub/" + topic.Filename + ".html", []byte(newhtml), 0777)
-		    if err != nil {
-		        fmt.Println(err)
-		    }
-
 		    newhtml = ""
 		    docListIndex++
 		}
@@ -627,5 +643,4 @@ func main() {
 	now = time.Now()
 	finishTime := now.UnixNano()
 	fmt.Println(finishTime - startTime)
-
 }
