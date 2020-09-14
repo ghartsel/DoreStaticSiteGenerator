@@ -48,16 +48,44 @@ func index() http.Handler {
 	})
 }
 
+// search is the handler responsible for rending the index page for the site.
+func search() http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		b := struct {
+			Title        template.HTML
+			BusinessName string
+			Slogan       string
+		}{
+			Title:        template.HTML("Business &verbar; Landing"),
+			BusinessName: "Business,",
+			Slogan:       "we get things done.",
+		}
+		err := templates.ExecuteTemplate(w, "base", &b)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("index: couldn't parse template: %v", err), http.StatusInternalServerError)
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+	})
+}
+
 // public serves static assets such as CSS and JavaScript to clients.
 func public() http.Handler {
-	return http.StripPrefix("/public/", http.FileServer(http.Dir("./public")))
+	return http.StripPrefix("/pub/", http.FileServer(http.Dir("./pub")))
+}
+
+// public serves static assets such as CSS and JavaScript to clients.
+func publicRedir() http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, "./pub", 301)
+	})
 }
 
 func main() {
 	mux := http.NewServeMux()
-	mux.Handle("/public/", logging(public()))
-	mux.Handle("/public/search", logging(index()))
-	mux.Handle("/", logging(index()))
+	mux.Handle("/pub/", logging(public()))
+	mux.Handle("/pub/search", logging(search()))
+	mux.Handle("/", logging(publicRedir()))
 
 	port, ok := os.LookupEnv("PORT")
 	if !ok {
