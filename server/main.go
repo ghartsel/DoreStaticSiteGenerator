@@ -16,24 +16,20 @@ type Interceptor struct {
 	overridden bool
 }
 
-// templates parses the specified templates and caches the parsed results
-// to help speed up response times.
+// templates parses the specified templates and caches the parsed results to speed response times.
 var templates = template.Must(template.ParseFiles("./templates/base.html", "./templates/searchBody.html"))
 
 func (i *Interceptor) WriteHeader(rc int) {
 	switch rc {
 	case 500:
-		http.Error(i.origWriter, "Custom 500 message / content", 500)
+		http.Error(i.origWriter, "Error:  500 Internal server error.", 500)
 	case 404:
-		http.Error(i.origWriter, "Custom 404 message", 404)
-	case 403:
-		i.origWriter.WriteHeader(403)
-		fmt.Fprintln(i.origWriter, "Custom 403 message")
+		http.Error(i.origWriter, "Error:  404 Requested page does not exist.\n\tReturn to /pub/index.html", 404)
 	default:
 		i.origWriter.WriteHeader(rc)
 		return
 	}
-	// if the default case didn't execute (and return) we must have overridden the output
+	// if the default case didn't execute and return, must have overridden the output
 	i.overridden = true
 	log.Println(i.overridden)
 }
@@ -51,6 +47,7 @@ func (i *Interceptor) Header() http.Header {
 	return i.origWriter.Header()
 }
 
+// page request error handler
 func ErrorHandler(h http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		w = &Interceptor{origWriter: w}
@@ -60,8 +57,7 @@ func ErrorHandler(h http.Handler) http.Handler {
 	return http.HandlerFunc(fn)
 }
 
-// logging is middleware for wrapping any handler we want to track response
-// times for and to see what resources are requested.
+// track response  times and see what resources are requested
 func logging(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
