@@ -11,9 +11,54 @@ import (
 	"time"
 )
 
+type Interceptor struct {
+	origWriter http.ResponseWriter
+	overridden bool
+}
+
 // templates parses the specified templates and caches the parsed results
 // to help speed up response times.
-var templates = template.Must(template.ParseFiles("./templates/base.html", "./templates/body.html"))
+var templates = template.Must(template.ParseFiles("./templates/base.html", "./templates/searchBody.html"))
+
+func (i *Interceptor) WriteHeader(rc int) {
+	switch rc {
+	case 500:
+		http.Error(i.origWriter, "Custom 500 message / content", 500)
+	case 404:
+		http.Error(i.origWriter, "Custom 404 message", 404)
+	case 403:
+		i.origWriter.WriteHeader(403)
+		fmt.Fprintln(i.origWriter, "Custom 403 message")
+	default:
+		i.origWriter.WriteHeader(rc)
+		return
+	}
+	// if the default case didn't execute (and return) we must have overridden the output
+	i.overridden = true
+	log.Println(i.overridden)
+}
+
+func (i *Interceptor) Write(b []byte) (int, error) {
+	if !i.overridden {
+		return i.origWriter.Write(b)
+	}
+
+	// Return nothing if we've overriden the response.
+	return 0, nil
+}
+
+func (i *Interceptor) Header() http.Header {
+	return i.origWriter.Header()
+}
+
+func ErrorHandler(h http.Handler) http.Handler {
+	fn := func(w http.ResponseWriter, r *http.Request) {
+		w = &Interceptor{origWriter: w}
+		h.ServeHTTP(w, r)
+	}
+
+	return http.HandlerFunc(fn)
+}
 
 // logging is middleware for wrapping any handler we want to track response
 // times for and to see what resources are requested.
@@ -27,42 +72,12 @@ func logging(next http.Handler) http.Handler {
 	})
 }
 
-// index is the handler responsible for rending the index page for the site.
-func index() http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		b := struct {
-			Title        template.HTML
-			BusinessName string
-			Slogan       string
-		}{
-			Title:        template.HTML("Business &verbar; Landing"),
-			BusinessName: "Business,",
-			Slogan:       "we get things done.",
-		}
-		err := templates.ExecuteTemplate(w, "base", &b)
-		if err != nil {
-			http.Error(w, fmt.Sprintf("index: couldn't parse template: %v", err), http.StatusInternalServerError)
-			return
-		}
-		w.WriteHeader(http.StatusOK)
-	})
-}
-
-// search is the handler responsible for rending the index page for the site.
+// search is the handler responsible for rending the search results page for the site.
 func search() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		b := struct {
-			Title        template.HTML
-			BusinessName string
-			Slogan       string
-		}{
-			Title:        template.HTML("Business &verbar; Landing"),
-			BusinessName: "Business,",
-			Slogan:       "we get things done.",
-		}
-		err := templates.ExecuteTemplate(w, "base", &b)
+		err := templates.ExecuteTemplate(w, "base", nil)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("index: couldn't parse template: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("search results: couldn't parse template: %v", err), http.StatusInternalServerError)
 			return
 		}
 		w.WriteHeader(http.StatusOK)
@@ -91,7 +106,7 @@ func main() {
 	if !ok {
 		port = "8080"
 	}
-
+/*
 	addr := fmt.Sprintf(":%s", port)
 	server := http.Server{
 		Addr:         addr,
@@ -100,8 +115,11 @@ func main() {
 		WriteTimeout: 15 * time.Second,
 		IdleTimeout:  15 * time.Second,
 	}
-	log.Println("main: running simple server on port", port)
+	log.Println("Dore server on port", port)
 	if err := server.ListenAndServe(); err != nil {
-		log.Fatalf("main: couldn't start simple server: %v\n", err)
+		log.Fatalf("Failed to start Dore server: %v\n", err)
 	}
+*/
+	log.Println("Dore server on port", port)
+	log.Fatal(http.ListenAndServe("localhost:8080", ErrorHandler(mux)))
 }
