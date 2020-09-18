@@ -275,7 +275,7 @@ interpreted as body elements.</p>
 <h3>Sidebar</h3>
 <p>This is an example of a sidebar.</p>
 <div class="sidebar">
-<p class="first sidebar-title">Optional Sidebar Title</p>
+<p class="first sidebar-title">Sidebar Title</p>
 <p class="sidebar-subtitle">Optional Sidebar Subtitle</p>
 <p class="last">Subsequent indented lines comprise
 the body of the sidebar, and are
@@ -310,14 +310,23 @@ Ewan McTeagle (for Lassie O'Shea):</p>
 </div>
 <div class="section" id="code">
 <h3>Code</h3>
+<p>Python syntax highlighting:</p>
 <pre class="code python literal-block">
 <span class="keyword">def</span> <span class="name function">my_function</span><span class="punctuation">():</span>  <span class="operator">//</span> <span class="name">my</span> <span class="name">demo</span> <span class="name">function</span>
     <span class="literal string double">&quot;just a test&quot;</span>
     <span class="keyword">print</span> <span class="literal number integer">8</span><span class="operator">/</span><span class="literal number integer">2</span>
 </pre>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Console syntax highlighting:</p>
 <pre class="code console literal-block">
 <span class="generic output">sudo /etc/init.d/alation shell</span>
 </pre>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Bash syntax highlighting:</p>
 <pre class="code bash literal-block">
 <span class="comment hashbang">#!/bin/bash
 </span>
@@ -325,6 +334,10 @@ Ewan McTeagle (for Lassie O'Shea):</p>
 <span class="name builtin">read</span> name
 <span class="name builtin">echo</span> <span class="literal string double">&quot;Nice to meet you </span><span class="name variable">$name</span><span class="literal string double">&quot;</span>
 </pre>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>JSON syntax highlighting:</p>
 <pre class="code json literal-block">
 <span class="punctuation">{</span>
    <span class="name tag">&quot;anObject&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
@@ -354,6 +367,10 @@ Ewan McTeagle (for Lassie O'Shea):</p>
    <span class="punctuation">]</span>
 <span class="punctuation">}</span>
 </pre>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Finally, SQL syntax highlighting:</p>
 <pre class="code sql literal-block">
 <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="name">CUSTOMERS</span><span class="punctuation">(</span>
    <span class="name">ID</span>   <span class="name builtin">INT</span>              <span class="keyword">NOT</span> <span class="keyword">NULL</span><span class="punctuation">,</span>
@@ -364,6 +381,40 @@ Ewan McTeagle (for Lassie O'Shea):</p>
    <span class="keyword">PRIMARY</span> <span class="keyword">KEY</span> <span class="punctuation">(</span><span class="name">ID</span><span class="punctuation">)</span>
 <span class="punctuation">);</span>
 </pre>
+<div class="twocol docutils container">
+<div class="leftside docutils container">
+Here is another way to define a code block, which renders the code block as a sidebar. This takes advantage of the 3-panel presentation format for reference content without wasting as much space.</div>
+<div class="rightside docutils container">
+<pre class="code json literal-block">
+<span class="punctuation">{</span>
+   <span class="name tag">&quot;anObject&quot;</span><span class="punctuation">:</span> <span class="punctuation">{</span>
+      <span class="name tag">&quot;numericProperty&quot;</span><span class="punctuation">:</span> <span class="literal number integer">-122</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;stringProperty&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;An offensive \&quot; is problematic&quot;</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;nullProperty&quot;</span><span class="punctuation">:</span> <span class="keyword constant">null</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;booleanProperty&quot;</span><span class="punctuation">:</span> <span class="keyword constant">true</span><span class="punctuation">,</span>
+      <span class="name tag">&quot;dateProperty&quot;</span><span class="punctuation">:</span> <span class="literal string double">&quot;2011-09-23&quot;</span>
+   <span class="punctuation">},</span>
+   <span class="name tag">&quot;arrayOfObjects&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>
+      <span class="punctuation">{</span>
+         <span class="name tag">&quot;item&quot;</span><span class="punctuation">:</span> <span class="literal number integer">1</span>
+      <span class="punctuation">},</span>
+      <span class="punctuation">{</span>
+         <span class="name tag">&quot;item&quot;</span><span class="punctuation">:</span> <span class="literal number integer">2</span>
+      <span class="punctuation">},</span>
+      <span class="punctuation">{</span>
+         <span class="name tag">&quot;item&quot;</span><span class="punctuation">:</span> <span class="literal number integer">3</span>
+      <span class="punctuation">}</span>
+   <span class="punctuation">]</span>
+<span class="punctuation">}</span>
+</pre>
+</div>
+</div>
+<blockquote class="epigraph">
+<p>“Spatial adjacency is
+more powerful than
+temporal stacking.”</p>
+<p class="attribution">&mdash;Edward Tufte</p>
+</blockquote>
 </div>
 <div class="section" id="math">
 <h3>Math</h3>
@@ -539,8 +590,8 @@ abbreviate it.</p>
 </div>
 <div class="section" id="date">
 <h3>Date</h3>
-<p>Today's date is 2020-09-05.</p>
-<p>This document was generated on 2020-09-05 at 09:38.</p>
+<p>Today's date is 2020-09-18.</p>
+<p>This document was generated on 2020-09-18 at 13:21.</p>
 </div>
 </div>
 <div class="section" id="miscellaneous">
