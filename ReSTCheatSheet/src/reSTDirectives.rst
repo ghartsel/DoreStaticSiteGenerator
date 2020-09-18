@@ -78,7 +78,7 @@ Sidebar
 
 This is an example of a sidebar.
 
-.. sidebar:: Optional Sidebar Title
+.. sidebar:: Sidebar Title
    :subtitle: Optional Sidebar Subtitle
 
    Subsequent indented lines comprise
@@ -115,15 +115,25 @@ NOT SUPPORTED
 Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Python syntax highlighting:
+
 .. code:: python
 
   def my_function():  // my demo function
       "just a test"
       print 8/2
 
+|
+
+Console syntax highlighting:
+
 .. code:: console
 
   sudo /etc/init.d/alation shell
+
+|
+
+Bash syntax highlighting:
 
 .. code:: bash
 
@@ -132,6 +142,10 @@ Code
   echo -e "Please enter your name: "
   read name
   echo "Nice to meet you $name"
+
+|
+
+JSON syntax highlighting:
 
 .. code:: json
 
@@ -163,6 +177,10 @@ Code
      ]
   }
 
+|
+
+Finally, SQL syntax highlighting:
+
 .. code-block:: sql
 
   CREATE TABLE CUSTOMERS(
@@ -173,6 +191,45 @@ Code
      SALARY   DECIMAL (18, 2),       
      PRIMARY KEY (ID)
   );
+
+.. container:: twocol
+
+   .. container:: leftside
+
+      Here is another way to define a code block, which renders the code block as a sidebar. This takes advantage of the 3-panel presentation format for reference content without wasting as much space.
+
+   .. container:: rightside
+
+      .. code:: json
+
+        {
+           "anObject": {
+              "numericProperty": -122,
+              "stringProperty": "An offensive \" is problematic",
+              "nullProperty": null,
+              "booleanProperty": true,
+              "dateProperty": "2011-09-23"
+           },
+           "arrayOfObjects": [
+              {
+                 "item": 1
+              },
+              {
+                 "item": 2
+              },
+              {
+                 "item": 3
+              }
+           ]
+        }
+
+.. epigraph::
+
+  “Spatial adjacency is
+  more powerful than
+  temporal stacking.”
+
+  -- Edward Tufte
 
 Math
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
