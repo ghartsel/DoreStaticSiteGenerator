@@ -73,7 +73,7 @@ func search() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		err := templates.ExecuteTemplate(w, "base", nil)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("search results: couldn't parse template: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("Error: Parsing search template %v", err), http.StatusInternalServerError)
 			return
 		}
 		w.WriteHeader(http.StatusOK)

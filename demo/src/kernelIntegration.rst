@@ -3,7 +3,7 @@ Kernel Integration
 
 If the standard tool set is used, only the object files are needed, to link the kernel with the rest of the system.
 
-If other tools are used, the source code files, copied from the distribution diskette, need to be edited to be compatible with the assembler used.  Generally, this only means changing assembler DIRECTIVE statements to those recognized by the assembler.  All include files, both those used by the kernel and those used to interface to the kernel, may also need to be edited.
+If other tools are used, the source code files need to be edited to be compatible with the assembler used.  Generally, this only means changing assembler DIRECTIVE statements to those recognized by the assembler.  All include files, both those used by the kernel and those used to interface to the kernel, may also need to be edited.
 
 The C-language include files do not need to be changed, because no vendor-dependent constructs or library functions are used.
 
