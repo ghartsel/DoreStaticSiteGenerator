@@ -16,9 +16,25 @@ GETTID Get Task Identifier
 
 DESCRIPTION:
 
-    This primitive is used to get a task's identifier, which is used with other primitives that reference a task.
+.. container:: twocol
 
-    Given a logical task name, defined at compile time, this primitive returns the run-time identity of the task.
+   .. container:: leftside
+
+        This primitive is used to get a task's identifier, which is used with other primitives that reference a task.
+
+        Given a logical task name, defined at compile time, this primitive returns the run-time identity of the task.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_task.h>
+
+        INT status;
+        BYTE *tid_p;
+
+        status = GETTID ("T_MONITOR", &tid_p);
 
 CONSIDERATIONS:
 
@@ -51,24 +67,36 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Task id available
 
         FAILURE Invalid task name, task does not exist or inconsistent data
 
 ASSEMBLER ACCESS:
-
     
     %GETTID #TNAME, #tid_p
-
 
 GETMYTID Get Own Task Identifier
 ----------------------------------
 
 DESCRIPTION:
 
-    This returns the identity of the currently active task.  It operates the same as GETTID, except the task name is not needed.
+.. container:: twocol
+
+   .. container:: leftside
+
+        This returns the identity of the currently active task.  It operates the same as GETTID, except the task name is not needed.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_task.h>
+
+        INT status;
+        BYTE *tid_p;
+
+        status = GETMYTID (&tid_p);
 
 CONSIDERATIONS:
 
@@ -95,8 +123,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Task id available
 
         FAILURE Task data structure fault detected
@@ -110,10 +136,25 @@ GET_CRID Get Resource Identifier
 
 DESCRIPTION:
 
-    This primitive gives a resource's identifier given the resource's name.
+.. container:: twocol
 
-    The identifier is used for the ENTER_CR and EXIT_CR primitives, which 
-    allow mutually exclusive access to the resource.
+   .. container:: leftside
+
+        This primitive gives a resource's identifier given the resource's name.
+
+        The identifier is used for the ENTER_CR and EXIT_CR primitives, which allow mutually exclusive access to the resource.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_cr.h>
+
+        INT status;
+        BYTE *crid_p;
+
+        status = GET_CRID (CR_CHAN, &crid_p);
 
 CONSIDERATIONS:
 
@@ -147,8 +188,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Resource id available
 
         FAILURE Invalid resource name
@@ -162,7 +201,24 @@ ENTER_CR Get Access to Resource
 
 DESCRIPTION:
 
-    This primitive provides for synchronization on a user-defined resource using a semaphore and guarantees mutually exclusive access to a resource.
+.. container:: twocol
+
+   .. container:: leftside
+
+        This primitive provides for synchronization on a user-defined resource using a semaphore and guarantees mutually exclusive access to a resource.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_cr.h>
+
+        INT status;
+        BYTE *crid_p;
+
+        status = GET_CRID (CR_CHAN, &crid_p);
+        status = ENTER_CR (crid_p);
 
 CONSIDERATIONS:
 
@@ -196,8 +252,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Access granted and resource locked
 
         FAILURE Invalid resource id or task has already acquired resource.
@@ -211,8 +265,28 @@ EXIT_CR Release Access to Resource
 
 DESCRIPTION:
 
-    Release control of a resource that was obtained with the ENTER_CR 
-    primitive.
+.. container:: twocol
+
+   .. container:: leftside
+
+        Release control of a resource that was obtained with the ENTER_CR primitive.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_cr.h>
+
+        INT status;
+        BYTE *crid_p;
+
+        status = GET_CRID (CR_CHAN, &crid_p);
+        status = ENTER_CR (crid_p);
+
+        /* access critical region */
+
+        status = EXIT_CR (crid_p);
 
 CONSIDERATIONS:
 
@@ -243,8 +317,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Resource released
 
         FAILURE Invalid resource id, resource not acquired with previous ENTER_CR by this task or corrupted kernel data detected.
@@ -258,7 +330,22 @@ ENTER_SCR Get Exclusive Access to Processor
 
 DESCRIPTION:
 
-    Obtain mutually exclusive access to the processor.
+.. container:: twocol
+
+   .. container:: leftside
+
+        Obtain mutually exclusive access to the processor.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_cr.h>
+
+        INT status;
+
+        status = ENTER_SCR ();
 
 CONSIDERATIONS:
 
@@ -267,7 +354,7 @@ CONSIDERATIONS:
     EXIT_SCR.
 
     This primitive is recommended for mutually exclusive access of short 
-    Duration because kernel time-related function is affected. 
+    duration because kernel time-related function is affected. 
 
     The processor condition code register is preserved upon return from the 
     EXIT_SCR primitive.
@@ -286,13 +373,31 @@ ASSEMBLER ACCESS:
 
     %ENTER_CR
 
-
-
 EXIT_SCR Release Exclusive Access to Processor
+----------------------------------------------
 
 DESCRIPTION:
 
-    This primitive is the complement of ENTER_SCR and releases mutually exclusive control of the processor.
+.. container:: twocol
+
+   .. container:: leftside
+
+        This primitive is the complement of ENTER_SCR and releases mutually exclusive control of the processor.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_cr.h>
+
+        INT status;
+
+        status = ENTER_SCR ();
+
+        /* access processor */
+
+        status = EXIT_SCR ();
 
 CONSIDERATIONS:
 
@@ -355,8 +460,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Task signalled
 
         FAILURE Task does not exist or corrupted data detected
@@ -409,8 +512,6 @@ PARAMETERS:
 +--------------------+--------------+-----------------------------------------------------------------------+
 
 RETURN:
-
-                                                      
 
     INT SUCCESS Requested event(s) occurred
 
@@ -465,8 +566,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Message sent to task
 
         FAILURE Unable to send message; invalid destination or resources not available
@@ -516,8 +615,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Message available
 
         FAILURE Parameter error
@@ -565,8 +662,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT TIMEOUT Requested time has expired
 
         FAILURE Unable to handle alert request
@@ -600,8 +695,6 @@ PARAMETERS:
 +--------------------+--------------+-----------------------------------------------------------------------+
 
 RETURN:
-
-                                                      
 
     INT SUCCESS Timer value available
 
@@ -642,8 +735,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Queue id available
 
         FAILURE Invalid queue name
@@ -677,8 +768,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Queue initialized
 
         FAILURE Invalid queue id
@@ -687,9 +776,8 @@ ASSEMBLER ACCESS:
 
     %Q_CLEAR #qid
 
-
-
 Q_GET Get Item from Linked-list Queue
+-------------------------------------
 
 DESCRIPTION:
 
@@ -718,8 +806,6 @@ PARAMETERS:
 +--------------------+--------------+-----------------------------------------------------------------------+
 
 RETURN:
-
-                                                      
 
     INT SUCCESS Item dequeued
 
@@ -766,8 +852,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Item queued
 
         FAILURE Invalid queue id or item is already queued.
@@ -808,8 +892,6 @@ PARAMETERS:
 
 RETURN:
 
-                                                      
-
     INT SUCCESS Memory location available
 
         FAILURE Memory not allocated for task
@@ -823,7 +905,26 @@ LOG_FATAL Indicate Fatal Fault Occurrence
 
 DESCRIPTION:
 
-    Log fatal-type fault and initiate recovery.
+.. container:: twocol
+
+   .. container:: leftside
+
+        Log fatal-type fault and initiate recovery.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_task.h>
+        #include <k_log.h>
+
+        INT status;
+        BYTE *tid_p;
+
+        if (status = GETMYTID (&tid_p)) != SUCCESS {
+            LOG_FATAL (LY_3 + SS_0 +LV_L + P2 + 3, status);
+        }
 
 CONSIDERATIONS:
 
@@ -846,7 +947,7 @@ PARAMETERS:
 +====================+==============+=======================================================================+
 | loc                | WORD         | Fault location code                                                   |
 +--------------------+--------------+-----------------------------------------------------------------------+
-| qual               | WORD         | ault qualifier                                                        |
+| qual               | WORD         | Fault qualifier                                                       |
 +--------------------+--------------+-----------------------------------------------------------------------+
 
 RETURN:  Not applicable
@@ -860,7 +961,26 @@ LOG_WARN Indicate Non-fatal Fault Occurrence
 
 DESCRIPTION:
 
-    Report a warning-type fault.
+.. container:: twocol
+
+   .. container:: leftside
+
+        Report a warning-type fault.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_task.h>
+        #include <k_log.h>
+
+        INT status;
+        BYTE *tid_p;
+
+        if (status = GETTID ("T_MONITOR", &tid_p)) != SUCCESS {
+            LOG_WARN (LY_3 + SS_0 +LV_L + P2 + 3, status);
+        }
 
 CONSIDERATIONS:
 
@@ -879,12 +999,10 @@ PARAMETERS:
 +====================+==============+=======================================================================+
 | loc                | WORD         | Fault location code                                                   |
 +--------------------+--------------+-----------------------------------------------------------------------+
-| qual               | WORD         | ault qualifier                                                        |
+| qual               | WORD         | Fault qualifier                                                       |
 +--------------------+--------------+-----------------------------------------------------------------------+
 
 RETURN:
-
-                                                      
 
     INT SUCCESS Fault is logged
           
@@ -892,12 +1010,27 @@ ASSEMBLER ACCESS:
 
     %LOG_WARN #LOC, #QUAL
 
-
 ENTER_SSTATE Enter Supervisory State
+------------------------------------
 
 DESCRIPTION:
 
-    This primitive is the mechanism for an interrupt service routine invoke supervisory state processing.
+.. container:: twocol
+
+   .. container:: leftside
+
+        This primitive is the mechanism for an interrupt service routine invoke supervisory state processing.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_supv.h>
+
+        INT status;
+
+        status = ENTER_SSTATE ();
 
 CONSIDERATIONS:
 
@@ -924,7 +1057,22 @@ EXIT_SSTATE Exit Supervisory State
 
 DESCRIPTION:
 
-    This primitive complements the ENTER_SSTATE primitive, and returns to the task state from the supervisory state.
+.. container:: twocol
+
+   .. container:: leftside
+
+        This primitive complements the ENTER_SSTATE primitive, and returns to the task state from the supervisory state.
+
+   .. container:: rightside
+
+      .. code:: cpp
+
+        #include <kernel.h>
+        #include <k_supv.h>
+
+        INT status;
+
+        status = EXIT_SSTATE ();
 
 CONSIDERATIONS:
 
