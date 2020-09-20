@@ -4626,11 +4626,6 @@ div.leftside {
     width: 3.75in;
     float: left;
 }
-/*
-div.rightside {
-    margin-left: 5in;
-}
-*/
 .rst-content .rightside {
     float: right;
     width: 100%;
