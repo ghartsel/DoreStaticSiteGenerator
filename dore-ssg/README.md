@@ -9,43 +9,35 @@ This takes content authored in ReStructuredText and converts it to HTML embedded
 - Golang
 - Docutils
 
+## Directory Structure Dependencies
+
+<p align="left">
+    <img src="static/docStruct.png" alt="Dore Directory Structure"/>
+</p>
+
+- The .toml configuration file must be in the /main directory.
+- The /src directory contains reStructureText source files and image source files.
+- The /pub directory contains published content with presentation files in the /pub/static directory.
+
 ## Usage
 
 ``` bash
     go run .
 ```
-
-tbd
-
-## Notes
-
-- tbd
-- tbd
-- tbd
+Or, build binary executable.
 
 ## TODO:
 
-- search
-  - return search page w/ ?highlight=<word> param
-  - preview result
-    - save 3 words before and after hit word
-- server
-  - form handler
-  - security checks
-  - custom 404 page
-- only regenerate changed topics
-- improved function comments
-- cleanup css & js
-- better error detection & handling
-- populate <meta> fields from .toml
+- search result rendering
+- improved code comments
+- cleanup CSS and JavaScript
+- improved error detection and handling
+- populate additional <meta> fields from .toml configuration file
 - document constraints on ReST directives
-- document process differences
-  - no auto-build on source change (not a blog)
-  - ssg dependencies (Pygments?, docutlls, ...)
+- document process differences from typical SSGs
 - syntax highlighting: map additional syntactic elements
-- doctype templates (spec, UG, cookbook, API/SDK ref)
-- progress notifications
-- publish to aws, netlify, github pages
-- feedback (discus, or ...)
-- version selection
-- add Google Analytics
+- provide templates for document types
+- build progress notifications
+- provide default feedback mechanism
+- support document version selection
+- add analytics
