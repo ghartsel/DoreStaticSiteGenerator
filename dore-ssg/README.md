@@ -12,7 +12,7 @@ This takes content authored in ReStructuredText and converts it to HTML embedded
 ## Directory Structure Dependencies
 
 <p align="left">
-    <img src="static/docStruct.png" alt="Dore Directory Structure"/>
+    <img src="static/dirStruct.png" alt="Dore Directory Structure"/>
 </p>
 
 - The .toml configuration file must be in the /main directory.
