@@ -24,7 +24,7 @@ This takes content authored in ReStructuredText and converts it to HTML embedded
 ``` bash
     go run .
 ```
-Or, build binary executable.
+Or, build binary executable and install in $GOPATH.
 
 ## TODO:
 
