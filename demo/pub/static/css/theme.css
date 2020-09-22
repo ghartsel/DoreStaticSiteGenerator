@@ -4635,3 +4635,27 @@ div.leftside {
     background: #f2ebe3;
     border: solid 1px #ded9d3;
 }
+
+div.searchTopicTitle {
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1; 
+    color: #E45E25;
+    border-bottom: solid 1px #ded9d3;
+}
+
+div.searchSectionHeading {
+    font-size: 16px;
+    font-weight: 300;
+    color: #00416B;
+    margin-left: : 12px;
+    margin-bottom: 12px;
+}
+
+div.searchSectionPara {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+}
