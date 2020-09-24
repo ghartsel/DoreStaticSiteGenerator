@@ -3,23 +3,44 @@
 package main
 
 import (
-	"fmt"
-	"html/template"
-	"log"
-	"net/http"
 	"os"
 	"time"
+	"fmt"
+    "strings"
+    "strconv"
+    "io/ioutil"
+	"log"
+	"net/http"
+	"html/template"
+    "encoding/json"
 )
+
+type InvertedIndexEntry struct {
+	Term            string
+	Frequency       int
+	DocumentListing []int
+}
+
+type InvertedIndex struct {
+	DocList []string
+	TopicName map[string]string
+	HashMap map[string]*InvertedIndexEntry
+	Items   []*InvertedIndexEntry
+}
+
+func termNotFound() {
+    if r := recover(); r!= nil {
+        log.Println("Term not found")
+    }
+}
 
 type Interceptor struct {
 	origWriter http.ResponseWriter
 	overridden bool
 }
 
-// templates parses the specified templates and caches the parsed results to speed response times.
-var templates = template.Must(template.ParseFiles("./templates/base.html", "./templates/searchBody.html"))
-
 func (i *Interceptor) WriteHeader(rc int) {
+	log.Printf("%d\n", rc)
 	switch rc {
 	case 500:
 		http.Error(i.origWriter, "Error:  500 Internal server error.", 500)
@@ -68,15 +89,76 @@ func logging(next http.Handler) http.Handler {
 	})
 }
 
+var queryString string
+
+// template function: populate search results
+func renderResults() template.HTML {
+
+	var invertedIndex InvertedIndex
+
+	defer termNotFound()
+
+	log.Printf("QUERYSTRING: %s\n", queryString)
+
+	term := strings.ToLower(queryString)
+
+	//
+	// get inverted index
+	//
+
+	jsonFile, err := os.Open("./pub/searchIndex.json")
+	if err != nil {
+	    log.Println(err)
+	}
+	log.Println("Successfully Opened users.json")
+	defer jsonFile.Close()
+
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	json.Unmarshal(byteValue, &invertedIndex)
+
+//	fmt.Printf("%d topics match the search term:\n", len(invertedIndex.HashMap[term].DocumentListing))
+
+	//
+	// populate search results page
+	//
+
+    newhtml := ""
+//	newhtml += `<h2>` + strconv.Itoa(invertedIndex.HashMap[term].Frequency) + ` occurrences of "` + queryString + `" in `+ strconv.Itoa(len(invertedIndex.HashMap[term].DocumentListing)) + ` topics:</h2>`
+	newhtml += `<h2>"` + queryString + `" found in `+ strconv.Itoa(len(invertedIndex.HashMap[term].DocumentListing)) + ` topics:</h2>`
+
+	for _, docID := range invertedIndex.HashMap[term].DocumentListing {
+//		fmt.Println(invertedIndex.TopicName[invertedIndex.DocList[docID]])
+//		fmt.Println(invertedIndex.DocList[docID])
+
+		// target topic title
+
+	 	newhtml += `<div class="searchTopicTitle"><a class="reference internal" href="` + invertedIndex.DocList[docID] + `.html?highlight=` + term + `">` + invertedIndex.TopicName[invertedIndex.DocList[docID]] + `</a>`
+	 	newhtml += `</div>`
+	}
+	return template.HTML(newhtml)
+}
+
 // search is the handler responsible for rending the search results page for the site.
 func search() http.Handler {
+	templates, err := template.New("").Funcs(template.FuncMap{
+	    "renderResults": renderResults,
+	}).ParseFiles("./pub/static/templates/base.html", "./pub/static/templates/searchBody.html")
+//	templates, err := template.ParseFiles("./pub/static/templates/base.html", "./pub/static/templates/searchBody.html")
+    if err != nil {
+        log.Println(err.Error())
+        return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        	http.Error(w, fmt.Sprintf("Error: Search template %v", err), http.StatusInternalServerError)
+        })
+    }
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		queryString = r.FormValue("q")
 		err := templates.ExecuteTemplate(w, "base", nil)
 		if err != nil {
 			http.Error(w, fmt.Sprintf("Error: Parsing search template %v", err), http.StatusInternalServerError)
 			return
 		}
-		w.WriteHeader(http.StatusOK)
+//		w.WriteHeader(http.StatusOK)
 	})
 }
 
