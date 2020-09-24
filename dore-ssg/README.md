@@ -28,16 +28,17 @@ Or, build binary executable and install in $GOPATH.
 
 ## TODO:
 
-- search result rendering
-- improved code comments
-- cleanup CSS and JavaScript
+- global refactoring
+- code comments
+- CSS and JavaScript clean up
 - improved error detection and handling
 - populate additional <meta> fields from .toml configuration file
 - document constraints on ReST directives
 - document process differences from typical SSGs
-- syntax highlighting: map additional syntactic elements
+- document usability support
+- syntax highlighting: map syntactic elements for additional languages
 - provide templates for document types
-- build progress notifications
+- annunciate build progress
 - provide default feedback mechanism
-- support document version selection
+- provide version selection
 - add analytics
