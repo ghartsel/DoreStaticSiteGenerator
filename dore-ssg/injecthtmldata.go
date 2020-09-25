@@ -70,8 +70,6 @@ HAS_SOURCE:  true
 <script type="text/javascript" src="static/js/jquery.min.js"></script>
 <script type="text/javascript" src="static/js/underscore.js"></script>
 <script type="text/javascript" src="static/js/doctools.js"></script>
-<script type="text/javascript" src="static/js/language_data.js"></script>
-<script type="text/javascript" src="static/js/searchtools.js"></script>
 <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="static/js/theme.js"></script>
 <script type="text/javascript">
