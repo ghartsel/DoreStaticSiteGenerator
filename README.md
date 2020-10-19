@@ -11,7 +11,8 @@ See the mock [demoyard](https://ghartsel.github.io/demoyard/) documentation for 
 - Server-hosted documentation for secure hosting and host-anywhere publishing.
 - Complete separation of content from metadata and styling - separation of authoring from presentation.
 - Supports and encourages topic-based authoring.
-- Open source for fully customizable functionality and styling.
+- Fully customizable functionality and styling.
+- Integrated search with up-to-date index generation.
 
 ## Repository Content
 
