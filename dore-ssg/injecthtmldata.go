@@ -21,7 +21,6 @@ var Prefix = []byte(`
 <link rel="shortcut icon" href="static/img/favicon.ico"/>
 <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
 <link rel="stylesheet" href="static/css/jquery-ui.min.css" type="text/css" />
-<script src="static/js/modernizr.min.js"></script>
 </head>
 <body class="wy-body-for-nav">
 `)
@@ -68,9 +67,9 @@ HAS_SOURCE:  true
 };
 </script>
 <script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="static/js/underscore.js"></script>
 <script type="text/javascript" src="static/js/doctools.js"></script>
-<script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="static/js/theme.js"></script>
 <script type="text/javascript">
 jQuery(function () {
@@ -91,10 +90,8 @@ var PostfixTerminal = []byte(`
 
 var landingPageSearch = []byte(`
 <div class="landing-search" role="search">
-<form id="rtd-search-form" class="wy-form" action="searchResults.html" method="get">
+<form class="wy-form" action="search" method="get">
 <input type="text" name="q" placeholder="Search this document" autofocus />
-<input type="hidden" name="check_keywords" value="yes" />
-<input type="hidden" name="area" value="default" />
 </form>
 </div>
 `)
